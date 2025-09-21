@@ -187,141 +187,140 @@ const TrafficFlow = () => {
   };
 
 
-  // Function to fetch from Google Places API with multiple strategies
+  // Enhanced Google Places API integration with better accuracy
   const fetchFromGooglePlaces = async (type, lat, lng) => {
     console.log(`Fetching ${type} from Google Places API for location: ${lat}, ${lng}`);
     
-    // Map our types to Google Places types
+    // Enhanced type mapping for better Google Places results
     const googleTypes = {
-      'restaurants': ['restaurant', 'food', 'cafe', 'meal_takeaway', 'meal_delivery'],
-      'toilets': ['restroom', 'toilet'],
-      'parking': ['parking'],
-      'fuel': ['gas_station']
+      'restaurants': [
+        'restaurant', 'food', 'cafe', 'meal_takeaway', 'meal_delivery',
+        'bakery', 'bar', 'night_club', 'lodging'
+      ],
+      'toilets': [
+        'restroom', 'toilet', 'lodging', 'hospital', 'shopping_mall',
+        'gas_station', 'restaurant', 'cafe'
+      ],
+      'parking': [
+        'parking', 'lodging', 'shopping_mall', 'hospital', 'airport',
+        'train_station', 'bus_station'
+      ],
+      'fuel': [
+        'gas_station', 'convenience_store'
+      ]
     };
 
-    const types = googleTypes[type];
+    const types = googleTypes[type] || [];
     if (!types) return [];
 
-    // Multiple API keys for redundancy
-    const apiKeys = [
-      'AIzaSyBFw0Qbyq9zTFTd-tUY6dOWWgUvx8sJgYk',
-      'AIzaSyBvOkBw8qJhJhJhJhJhJhJhJhJhJhJhJhJh', // Backup key
-      'AIzaSyCvOkBw8qJhJhJhJhJhJhJhJhJhJhJhJhJh'  // Another backup
-    ];
-
-    // Multiple proxy services for redundancy
-    const proxyServices = [
-      'https://api.allorigins.win/raw?url=',
-      'https://cors-anywhere.herokuapp.com/',
-      'https://thingproxy.freeboard.io/fetch/',
-      'https://corsproxy.io/?'
-    ];
-
+    // Use a more reliable API key and proxy combination
+    const apiKey = 'AIzaSyBFw0Qbyq9zTFTd-tUY6dOWWgUvx8sJgYk';
+    const proxyUrl = 'https://api.allorigins.win/raw?url=';
+    
     let allResults = [];
 
-    // Try each type with multiple strategies
+    // Fetch from multiple search strategies for better coverage
     for (const googleType of types) {
-      let typeResults = [];
-      
-      // Strategy 1: Try different API keys
-      for (const apiKey of apiKeys) {
-        if (typeResults.length > 0) break; // If we got results, stop trying other keys
+      try {
+        console.log(`Searching for ${googleType}...`);
         
-        // Strategy 2: Try different proxy services
-        for (const proxyUrl of proxyServices) {
-          if (typeResults.length > 0) break; // If we got results, stop trying other proxies
-          
-          try {
-            console.log(`Trying ${googleType} with API key and proxy...`);
-            
-            const placesUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=2000&type=${googleType}&key=${apiKey}`;
-            const fullUrl = proxyUrl + encodeURIComponent(placesUrl);
-            
-            console.log('Making request to:', fullUrl);
-            
-            const response = await fetch(fullUrl, {
-              method: 'GET',
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-              },
-              timeout: 10000 // 10 second timeout
-            });
-            
-            console.log('Response status:', response.status);
-            
-            if (response.ok) {
-              const data = await response.json();
-              console.log('Response data:', data);
+        // Strategy 1: Nearby search with specific type
+        const nearbyUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=3000&type=${googleType}&key=${apiKey}`;
+        
+        const response = await fetch(proxyUrl + encodeURIComponent(nearbyUrl), {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          }
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          console.log(`Nearby search results for ${googleType}:`, data);
 
-              if (data.results && data.results.length > 0) {
-                console.log(`Found ${data.results.length} results for ${googleType}`);
-                typeResults = data.results.map(place => ({
-                  id: place.place_id,
-                  name: place.name,
-                  type: type,
-                  coordinates: [place.geometry.location.lat, place.geometry.location.lng],
-                  tags: {
-                    rating: place.rating,
-                    vicinity: place.vicinity,
-                    types: place.types,
-                    googleType: googleType
-                  }
-                }));
-                break; // Success, stop trying other proxies
-              } else if (data.error_message) {
-                console.warn(`Google Places API error: ${data.error_message}`);
+          if (data.results && data.results.length > 0) {
+            const typeResults = data.results.map(place => ({
+              id: place.place_id,
+              name: place.name,
+              type: type,
+              coordinates: [place.geometry.location.lat, place.geometry.location.lng],
+              tags: {
+                rating: place.rating || 0,
+                vicinity: place.vicinity || place.formatted_address || 'Unknown location',
+                types: place.types || [],
+                googleType: googleType,
+                priceLevel: place.price_level,
+                openNow: place.opening_hours?.open_now,
+                photos: place.photos?.length || 0
               }
-            } else {
-              console.warn(`HTTP error: ${response.status} ${response.statusText}`);
-            }
-          } catch (error) {
-            console.warn(`Error with proxy ${proxyUrl}:`, error.message);
-            continue; // Try next proxy
+            }));
+            allResults = allResults.concat(typeResults);
           }
         }
-      }
 
-      // Strategy 3: Try direct API call (might work in some environments)
-      if (typeResults.length === 0) {
-        try {
-          console.log(`Trying direct API call for ${googleType}...`);
-          
-          const placesUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=2000&type=${googleType}&key=${apiKeys[0]}`;
-          
-          const response = await fetch(placesUrl);
-          
-          if (response.ok) {
-            const data = await response.json();
-            
-            if (data.results && data.results.length > 0) {
-              console.log(`Direct API call found ${data.results.length} results for ${googleType}`);
-              typeResults = data.results.map(place => ({
-                id: place.place_id,
-                name: place.name,
-                type: type,
-                coordinates: [place.geometry.location.lat, place.geometry.location.lng],
-                tags: {
-                  rating: place.rating,
-                  vicinity: place.vicinity,
-                  types: place.types,
-                  googleType: googleType
-                }
-              }));
-            }
+        // Strategy 2: Text search for better coverage
+        const searchQuery = type === 'toilets' ? 'public toilet' : 
+                           type === 'parking' ? 'parking lot' : 
+                           type === 'fuel' ? 'petrol pump' : 
+                           type === 'restaurants' ? 'restaurant' : type;
+        
+        const textSearchUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchQuery}+near+${lat},${lng}&radius=3000&key=${apiKey}`;
+        
+        const textResponse = await fetch(proxyUrl + encodeURIComponent(textSearchUrl), {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
           }
-        } catch (error) {
-          console.warn(`Direct API call failed:`, error.message);
-        }
-      }
+        });
+        
+        if (textResponse.ok) {
+          const textData = await textResponse.json();
+          console.log(`Text search results for ${searchQuery}:`, textData);
 
-      allResults = allResults.concat(typeResults);
+          if (textData.results && textData.results.length > 0) {
+            const textResults = textData.results.map(place => ({
+              id: place.place_id,
+              name: place.name,
+              type: type,
+              coordinates: [place.geometry.location.lat, place.geometry.location.lng],
+              tags: {
+                rating: place.rating || 0,
+                vicinity: place.formatted_address || place.vicinity || 'Unknown location',
+                types: place.types || [],
+                googleType: 'text_search',
+                priceLevel: place.price_level,
+                openNow: place.opening_hours?.open_now,
+                photos: place.photos?.length || 0
+              }
+            }));
+            allResults = allResults.concat(textResults);
+          }
+        }
+
+      } catch (error) {
+        console.warn(`Error fetching ${googleType}:`, error);
+      }
     }
 
-    // Remove duplicates based on place_id
-    const uniqueResults = allResults.filter((place, index, self) => 
-      index === self.findIndex(p => p.id === place.id)
-    );
+    // Remove duplicates and filter by distance
+    const uniqueResults = allResults
+      .filter((place, index, self) => 
+        index === self.findIndex(p => p.id === place.id)
+      )
+      .filter(place => {
+        // Calculate distance and filter out places too far
+        const distance = calculateDistance(lat, lng, place.coordinates[0], place.coordinates[1]);
+        return distance <= 3; // Within 3km
+      })
+      .sort((a, b) => {
+        // Sort by distance
+        const distA = calculateDistance(lat, lng, a.coordinates[0], a.coordinates[1]);
+        const distB = calculateDistance(lat, lng, b.coordinates[0], b.coordinates[1]);
+        return distA - distB;
+      })
+      .slice(0, 15); // Limit to top 15 results
 
     console.log(`Total unique results for ${type}:`, uniqueResults.length);
     return uniqueResults;
@@ -349,6 +348,24 @@ const TrafficFlow = () => {
     } else {
       return `${distance.toFixed(1)}km`;
     }
+  };
+
+  // Function to get detailed place information
+  const getPlaceDetails = async (placeId) => {
+    try {
+      const apiKey = 'AIzaSyBFw0Qbyq9zTFTd-tUY6dOWWgUvx8sJgYk';
+      const proxyUrl = 'https://api.allorigins.win/raw?url=';
+      const detailsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,formatted_address,formatted_phone_number,opening_hours,website,reviews,photos&key=${apiKey}`;
+      
+      const response = await fetch(proxyUrl + encodeURIComponent(detailsUrl));
+      if (response.ok) {
+        const data = await response.json();
+        return data.result;
+      }
+    } catch (error) {
+      console.warn('Error fetching place details:', error);
+    }
+    return null;
   };
 
   // Function to open Google Maps directions
@@ -702,7 +719,7 @@ const TrafficFlow = () => {
                          </p>
                        </div>
 
-                       {location.tags.rating && (
+                       {location.tags.rating > 0 && (
                          <p style={{ color: '#FF9800', fontSize: '11px', margin: '4px 0' }}>
                            ⭐ Rating: {location.tags.rating}/5
                          </p>
@@ -714,21 +731,32 @@ const TrafficFlow = () => {
                          </p>
                        )}
                        
-                       {location.tags.cuisine && (
-                         <p style={{ color: '#666', fontSize: '11px', margin: '4px 0' }}>
-                           🍽️ Cuisine: {location.tags.cuisine}
+                       {location.tags.priceLevel && (
+                         <p style={{ color: '#4CAF50', fontSize: '11px', margin: '4px 0' }}>
+                           💰 Price Level: {'$'.repeat(location.tags.priceLevel)}
                          </p>
                        )}
                        
-                       {location.tags.amenity && (
-                         <p style={{ color: '#666', fontSize: '11px', margin: '4px 0' }}>
-                           🏢 Type: {location.tags.amenity}
+                       {location.tags.openNow !== undefined && (
+                         <p style={{ 
+                           color: location.tags.openNow ? '#4CAF50' : '#F44336', 
+                           fontSize: '11px', 
+                           margin: '4px 0',
+                           fontWeight: 'bold'
+                         }}>
+                           {location.tags.openNow ? '🟢 Open Now' : '🔴 Closed'}
                          </p>
                        )}
                        
                        {location.tags.types && location.tags.types.length > 0 && (
                          <p style={{ color: '#666', fontSize: '11px', margin: '4px 0' }}>
-                           🏷️ {location.tags.types.slice(0, 2).join(', ')}
+                           🏷️ {location.tags.types.slice(0, 3).join(', ')}
+                         </p>
+                       )}
+                       
+                       {location.tags.photos > 0 && (
+                         <p style={{ color: '#2196F3', fontSize: '11px', margin: '4px 0' }}>
+                           📸 {location.tags.photos} photos available
                          </p>
                        )}
 
@@ -746,33 +774,68 @@ const TrafficFlow = () => {
                          </p>
                        )}
 
-                       <button 
-                         onClick={() => openDirections(location.coordinates[0], location.coordinates[1], location.name)}
-                         style={{
-                           background: 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)',
-                           color: 'white',
-                           border: 'none',
-                           borderRadius: '8px',
-                           padding: '8px 16px',
-                           fontSize: '12px',
-                           fontWeight: 'bold',
-                           cursor: 'pointer',
-                           marginTop: '8px',
-                           width: '100%',
-                           boxShadow: '0 2px 8px rgba(76, 175, 80, 0.3)',
-                           transition: 'all 0.3s ease'
-                         }}
-                         onMouseOver={(e) => {
-                           e.target.style.transform = 'translateY(-1px)';
-                           e.target.style.boxShadow = '0 4px 12px rgba(76, 175, 80, 0.4)';
-                         }}
-                         onMouseOut={(e) => {
-                           e.target.style.transform = 'translateY(0)';
-                           e.target.style.boxShadow = '0 2px 8px rgba(76, 175, 80, 0.3)';
-                         }}
-                       >
-                         🗺️ Get Directions
-                       </button>
+                       <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
+                         <button 
+                           onClick={() => openDirections(location.coordinates[0], location.coordinates[1], location.name)}
+                           style={{
+                             background: 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)',
+                             color: 'white',
+                             border: 'none',
+                             borderRadius: '8px',
+                             padding: '8px 12px',
+                             fontSize: '11px',
+                             fontWeight: 'bold',
+                             cursor: 'pointer',
+                             flex: 1,
+                             boxShadow: '0 2px 8px rgba(76, 175, 80, 0.3)',
+                             transition: 'all 0.3s ease'
+                           }}
+                           onMouseOver={(e) => {
+                             e.target.style.transform = 'translateY(-1px)';
+                             e.target.style.boxShadow = '0 4px 12px rgba(76, 175, 80, 0.4)';
+                           }}
+                           onMouseOut={(e) => {
+                             e.target.style.transform = 'translateY(0)';
+                             e.target.style.boxShadow = '0 2px 8px rgba(76, 175, 80, 0.3)';
+                           }}
+                         >
+                           🗺️ Directions
+                         </button>
+                         
+                         {location.id && location.id.startsWith('ChIJ') && (
+                           <button 
+                             onClick={async () => {
+                               const details = await getPlaceDetails(location.id);
+                               if (details) {
+                                 alert(`More Details:\n\nPhone: ${details.formatted_phone_number || 'Not available'}\nWebsite: ${details.website || 'Not available'}\nAddress: ${details.formatted_address || location.tags.vicinity}`);
+                               }
+                             }}
+                             style={{
+                               background: 'linear-gradient(135deg, #2196F3 0%, #1976D2 100%)',
+                               color: 'white',
+                               border: 'none',
+                               borderRadius: '8px',
+                               padding: '8px 12px',
+                               fontSize: '11px',
+                               fontWeight: 'bold',
+                               cursor: 'pointer',
+                               flex: 1,
+                               boxShadow: '0 2px 8px rgba(33, 150, 243, 0.3)',
+                               transition: 'all 0.3s ease'
+                             }}
+                             onMouseOver={(e) => {
+                               e.target.style.transform = 'translateY(-1px)';
+                               e.target.style.boxShadow = '0 4px 12px rgba(33, 150, 243, 0.4)';
+                             }}
+                             onMouseOut={(e) => {
+                               e.target.style.transform = 'translateY(0)';
+                               e.target.style.boxShadow = '0 2px 8px rgba(33, 150, 243, 0.3)';
+                             }}
+                           >
+                             ℹ️ Details
+                           </button>
+                         )}
+                       </div>
                      </div>
                    </Popup>
                  </Marker>
