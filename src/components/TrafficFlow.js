@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Polyline, Tooltip } from 'react-leaflet';
 import L from 'leaflet';
 import { pujoLocations, trafficPatterns } from '../data/pujoData';
 import 'leaflet/dist/leaflet.css';
 import './TrafficFlow.css';
 
 // Fix for default markers in react-leaflet
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-});
+if (typeof window !== 'undefined') {
+  delete L.Icon.Default.prototype._getIconUrl;
+  L.Icon.Default.mergeOptions({
+    iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+    iconUrl: require('leaflet/dist/images/marker-icon.png'),
+    shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+  });
+}
 
 const TrafficFlow = () => {
   const { id } = useParams();
@@ -388,68 +390,78 @@ const TrafficFlow = () => {
     }
   };
 
-  // Create custom location marker
+  // Create custom location marker with error handling
   const createCustomIcon = (color, icon, size = 40) => {
-    return L.divIcon({
-      className: 'custom-location-marker',
-      html: `<div style="
-        position: relative;
-        width: ${size}px;
-        height: ${size}px;
-      ">
-        <!-- Main marker body -->
-        <div style="
-          background: ${color};
-          width: 100%;
-          height: 100%;
-          border-radius: 50% 50% 50% 0;
-          transform: rotate(-45deg);
-          border: 3px solid rgba(255,255,255,0.8);
-          box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+    try {
+      if (!L || !L.divIcon) {
+        console.warn('Leaflet not properly initialized');
+        return null;
+      }
+      
+      return L.divIcon({
+        className: 'custom-location-marker',
+        html: `<div style="
           position: relative;
+          width: ${size}px;
+          height: ${size}px;
         ">
-          <!-- Inner circle for icon area -->
+          <!-- Main marker body -->
+          <div style="
+            background: ${color};
+            width: 100%;
+            height: 100%;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            border: 3px solid rgba(255,255,255,0.8);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+            position: relative;
+          ">
+            <!-- Inner circle for icon area -->
+            <div style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) rotate(45deg);
+              width: 60%;
+              height: 60%;
+              background: white;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: ${size * 0.3}px;
+              color: #333;
+              font-weight: bold;
+              text-shadow: none;
+              box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            ">
+              ${icon}
+            </div>
+          </div>
+          <!-- Marker shadow -->
           <div style="
             position: absolute;
-            top: 50%;
+            bottom: -5px;
             left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg);
-            width: 60%;
-            height: 60%;
-            background: white;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 8px;
+            background: rgba(0,0,0,0.2);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: ${size * 0.3}px;
-            color: #333;
-            font-weight: bold;
-            text-shadow: none;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-          ">
-            ${icon}
-          </div>
-        </div>
-        <!-- Marker shadow -->
-        <div style="
-          position: absolute;
-          bottom: -5px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80%;
-          height: 8px;
-          background: rgba(0,0,0,0.2);
-          border-radius: 50%;
-          filter: blur(2px);
-        "></div>
-      </div>`,
-      iconSize: [size, size],
-      iconAnchor: [size/2, size],
-      popupAnchor: [0, -size]
-    });
+            filter: blur(2px);
+          "></div>
+        </div>`,
+        iconSize: [size, size],
+        iconAnchor: [size/2, size],
+        popupAnchor: [0, -size]
+      });
+    } catch (error) {
+      console.error('Error creating custom icon:', error);
+      return null;
+    }
   };
 
-  // Create location markers with proper sizing
+  // Create location markers with proper sizing and null checks
   const pandalIcon = createCustomIcon('#8e44ad', '🏛️', 45);
   
   // Create icons for nearby locations with smaller size
@@ -461,6 +473,12 @@ const TrafficFlow = () => {
   // Create icons for entry and exit markers
   const entryIcon = createCustomIcon('#4CAF50', '→', 30);
   const exitIcon = createCustomIcon('#F44336', '←', 30);
+
+  // Check if all icons were created successfully
+  if (!pandalIcon || !restaurantIcon || !toiletIcon || !parkingIcon || !fuelIcon || !entryIcon || !exitIcon) {
+    console.error('Failed to create one or more custom icons');
+    return <div>Error loading map markers. Please refresh the page.</div>;
+  }
 
   return (
     <div className="traffic-flow-page">
@@ -561,6 +579,7 @@ const TrafficFlow = () => {
             zoom={16}
             style={{ height: '500px', width: '100%', borderRadius: '15px' }}
             className="traffic-map"
+            key={`map-${pandal.id}`}
           >
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -666,6 +685,141 @@ const TrafficFlow = () => {
                 />
               </>
             )}
+
+            {/* Local Street Names */}
+            {(() => {
+              // Local street names based on Google Maps reference for Baguiati area
+              const streetLabels = [
+                // Major Roads
+                { 
+                  lat: pandal.entryLat + 0.0008, 
+                  lng: pandal.entryLng - 0.0015, 
+                  text: "Railpukur Road", 
+                  type: "major",
+                  rotation: 45
+                },
+                { 
+                  lat: pandal.entryLat - 0.0008, 
+                  lng: pandal.entryLng + 0.0012, 
+                  text: "SH3", 
+                  type: "highway",
+                  rotation: -30
+                },
+                { 
+                  lat: pandal.entryLat + 0.0005, 
+                  lng: pandal.entryLng + 0.0015, 
+                  text: "Kazi Nazrul Islam Avenue", 
+                  type: "major",
+                  rotation: 60
+                },
+                { 
+                  lat: pandal.entryLat - 0.0006, 
+                  lng: pandal.entryLng - 0.001, 
+                  text: "VIP Road Flyover", 
+                  type: "highway",
+                  rotation: -45
+                },
+                // Local Streets
+                { 
+                  lat: pandal.entryLat + 0.0003, 
+                  lng: pandal.entryLng - 0.0005, 
+                  text: "Baguiati Main Road", 
+                  type: "local",
+                  rotation: 30
+                },
+                { 
+                  lat: pandal.entryLat - 0.0005, 
+                  lng: pandal.entryLng + 0.0003, 
+                  text: "Railpukur Lane", 
+                  type: "local",
+                  rotation: -60
+                },
+                { 
+                  lat: pandal.entryLat + 0.0002, 
+                  lng: pandal.entryLng + 0.0002, 
+                  text: "Service Road", 
+                  type: "service",
+                  rotation: 15
+                },
+                { 
+                  lat: pandal.entryLat - 0.0003, 
+                  lng: pandal.entryLng - 0.0002, 
+                  text: "Puja Para Lane", 
+                  type: "local",
+                  rotation: -30
+                },
+                { 
+                  lat: pandal.entryLat + 0.0004, 
+                  lng: pandal.entryLng + 0.0001, 
+                  text: "Baghajatin Road", 
+                  type: "local",
+                  rotation: 75
+                },
+                { 
+                  lat: pandal.entryLat - 0.0007, 
+                  lng: pandal.entryLng + 0.0008, 
+                  text: "Rajarhat Road", 
+                  type: "major",
+                  rotation: -15
+                },
+                { 
+                  lat: pandal.entryLat + 0.0001, 
+                  lng: pandal.entryLng - 0.0008, 
+                  text: "Biswa Bangla Sarani", 
+                  type: "major",
+                  rotation: 45
+                },
+                { 
+                  lat: pandal.entryLat - 0.0004, 
+                  lng: pandal.entryLng - 0.0003, 
+                  text: "Chinapark Road", 
+                  type: "local",
+                  rotation: -45
+                }
+              ];
+
+              return streetLabels.map((label, index) => {
+                try {
+                  if (!L || !L.divIcon) {
+                    console.warn('Leaflet not available for street label creation');
+                    return null;
+                  }
+
+                  const labelIcon = L.divIcon({
+                    className: 'street-label',
+                    html: `<div style="
+                      background: transparent;
+                      color: #333;
+                      font-size: 10px;
+                      font-weight: 600;
+                      text-align: center;
+                      white-space: nowrap;
+                      max-width: 120px;
+                      text-overflow: ellipsis;
+                      overflow: hidden;
+                      transform: rotate(${label.rotation}deg);
+                      transform-origin: center;
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      line-height: 1.2;
+                      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+                      pointer-events: none;
+                    ">
+                      ${label.text}
+                    </div>`,
+                    iconSize: [120, 20],
+                    iconAnchor: [60, 10],
+                    popupAnchor: [0, -10]
+                  });
+
+                  return (
+                    <Marker key={`street-label-${index}`} position={[label.lat, label.lng]} icon={labelIcon} />
+                  );
+                } catch (error) {
+                  console.error('Error creating street label:', error);
+                  return null;
+                }
+              }).filter(Boolean);
+            })()}
 
             {/* Nearby Location Markers */}
             {activeFilter && nearbyLocations[activeFilter].map((location, index) => {
