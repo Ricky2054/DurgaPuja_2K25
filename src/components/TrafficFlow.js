@@ -582,8 +582,8 @@ const TrafficFlow = () => {
             key={`map-${pandal.id}`}
           >
             <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.google.com/maps">Google Maps</a>'
+              url="https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
             />
             
             {/* Main Pandal Marker */}
@@ -686,140 +686,6 @@ const TrafficFlow = () => {
               </>
             )}
 
-            {/* Local Street Names */}
-            {(() => {
-              // Local street names based on Google Maps reference for Baguiati area
-              const streetLabels = [
-                // Major Roads
-                { 
-                  lat: pandal.entryLat + 0.0008, 
-                  lng: pandal.entryLng - 0.0015, 
-                  text: "Railpukur Road", 
-                  type: "major",
-                  rotation: 45
-                },
-                { 
-                  lat: pandal.entryLat - 0.0008, 
-                  lng: pandal.entryLng + 0.0012, 
-                  text: "SH3", 
-                  type: "highway",
-                  rotation: -30
-                },
-                { 
-                  lat: pandal.entryLat + 0.0005, 
-                  lng: pandal.entryLng + 0.0015, 
-                  text: "Kazi Nazrul Islam Avenue", 
-                  type: "major",
-                  rotation: 60
-                },
-                { 
-                  lat: pandal.entryLat - 0.0006, 
-                  lng: pandal.entryLng - 0.001, 
-                  text: "VIP Road Flyover", 
-                  type: "highway",
-                  rotation: -45
-                },
-                // Local Streets
-                { 
-                  lat: pandal.entryLat + 0.0003, 
-                  lng: pandal.entryLng - 0.0005, 
-                  text: "Baguiati Main Road", 
-                  type: "local",
-                  rotation: 30
-                },
-                { 
-                  lat: pandal.entryLat - 0.0005, 
-                  lng: pandal.entryLng + 0.0003, 
-                  text: "Railpukur Lane", 
-                  type: "local",
-                  rotation: -60
-                },
-                { 
-                  lat: pandal.entryLat + 0.0002, 
-                  lng: pandal.entryLng + 0.0002, 
-                  text: "Service Road", 
-                  type: "service",
-                  rotation: 15
-                },
-                { 
-                  lat: pandal.entryLat - 0.0003, 
-                  lng: pandal.entryLng - 0.0002, 
-                  text: "Puja Para Lane", 
-                  type: "local",
-                  rotation: -30
-                },
-                { 
-                  lat: pandal.entryLat + 0.0004, 
-                  lng: pandal.entryLng + 0.0001, 
-                  text: "Baghajatin Road", 
-                  type: "local",
-                  rotation: 75
-                },
-                { 
-                  lat: pandal.entryLat - 0.0007, 
-                  lng: pandal.entryLng + 0.0008, 
-                  text: "Rajarhat Road", 
-                  type: "major",
-                  rotation: -15
-                },
-                { 
-                  lat: pandal.entryLat + 0.0001, 
-                  lng: pandal.entryLng - 0.0008, 
-                  text: "Biswa Bangla Sarani", 
-                  type: "major",
-                  rotation: 45
-                },
-                { 
-                  lat: pandal.entryLat - 0.0004, 
-                  lng: pandal.entryLng - 0.0003, 
-                  text: "Chinapark Road", 
-                  type: "local",
-                  rotation: -45
-                }
-              ];
-
-              return streetLabels.map((label, index) => {
-                try {
-                  if (!L || !L.divIcon) {
-                    console.warn('Leaflet not available for street label creation');
-                    return null;
-                  }
-
-                  const labelIcon = L.divIcon({
-                    className: 'street-label',
-                    html: `<div style="
-                      background: transparent;
-                      color: #333;
-                      font-size: 10px;
-                      font-weight: 600;
-                      text-align: center;
-                      white-space: nowrap;
-                      max-width: 120px;
-                      text-overflow: ellipsis;
-                      overflow: hidden;
-                      transform: rotate(${label.rotation}deg);
-                      transform-origin: center;
-                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                      line-height: 1.2;
-                      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
-                      pointer-events: none;
-                    ">
-                      ${label.text}
-                    </div>`,
-                    iconSize: [120, 20],
-                    iconAnchor: [60, 10],
-                    popupAnchor: [0, -10]
-                  });
-
-                  return (
-                    <Marker key={`street-label-${index}`} position={[label.lat, label.lng]} icon={labelIcon} />
-                  );
-                } catch (error) {
-                  console.error('Error creating street label:', error);
-                  return null;
-                }
-              }).filter(Boolean);
-            })()}
 
             {/* Nearby Location Markers */}
             {activeFilter && nearbyLocations[activeFilter].map((location, index) => {

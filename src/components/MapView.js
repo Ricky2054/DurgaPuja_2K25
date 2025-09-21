@@ -6,12 +6,14 @@ import { pujoLocations } from '../data/pujoData';
 import 'leaflet/dist/leaflet.css';
 
 // Fix for default markers in react-leaflet
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-});
+if (typeof window !== 'undefined') {
+  delete L.Icon.Default.prototype._getIconUrl;
+  L.Icon.Default.mergeOptions({
+    iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+    iconUrl: require('leaflet/dist/images/marker-icon.png'),
+    shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+  });
+}
 
 const MapView = () => {
   const navigate = useNavigate();
@@ -28,30 +30,40 @@ const MapView = () => {
     navigate('/');
   };
 
-  // Create custom marker icon
+  // Create custom marker icon with error handling
   const createCustomIcon = (index) => {
-    return L.divIcon({
-      className: 'custom-marker',
-      html: `<div style="
-        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-        border: 3px solid #fff;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: white;
-        font-size: 16px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        cursor: pointer;
-        transition: all 0.3s ease;
-      ">${index}</div>`,
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      popupAnchor: [0, -20]
-    });
+    try {
+      if (!L || !L.divIcon) {
+        console.warn('Leaflet not properly initialized');
+        return null;
+      }
+      
+      return L.divIcon({
+        className: 'custom-marker',
+        html: `<div style="
+          background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+          border: 3px solid #fff;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          color: white;
+          font-size: 16px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+          transition: all 0.3s ease;
+        ">${index}</div>`,
+        iconSize: [40, 40],
+        iconAnchor: [20, 20],
+        popupAnchor: [0, -20]
+      });
+    } catch (error) {
+      console.error('Error creating custom icon:', error);
+      return null;
+    }
   };
 
   const handleMarkerClick = (pujoId) => {
@@ -137,23 +149,33 @@ const MapView = () => {
     );
   };
 
-  // Create user location marker icon
+  // Create user location marker icon with error handling
   const createUserLocationIcon = () => {
-    return L.divIcon({
-      className: 'user-location-marker',
-      html: `<div style="
-        background: #3498db;
-        border: 4px solid #fff;
-        border-radius: 50%;
-        width: 20px;
-        height: 20px;
-        box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.3);
-        animation: userLocationPulse 2s infinite;
-      "></div>`,
-      iconSize: [20, 20],
-      iconAnchor: [10, 10],
-      popupAnchor: [0, -10]
-    });
+    try {
+      if (!L || !L.divIcon) {
+        console.warn('Leaflet not properly initialized');
+        return null;
+      }
+      
+      return L.divIcon({
+        className: 'user-location-marker',
+        html: `<div style="
+          background: #3498db;
+          border: 4px solid #fff;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.3);
+          animation: userLocationPulse 2s infinite;
+        "></div>`,
+        iconSize: [20, 20],
+        iconAnchor: [10, 10],
+        popupAnchor: [0, -10]
+      });
+    } catch (error) {
+      console.error('Error creating user location icon:', error);
+      return null;
+    }
   };
 
   // Calculate center point of all locations
@@ -242,8 +264,8 @@ const MapView = () => {
           ref={mapRef}
         >
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.google.com/maps">Google Maps</a>'
+          url="https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
         />
         
         {/* User Location Marker */}

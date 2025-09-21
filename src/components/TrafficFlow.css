@@ -223,16 +223,6 @@
   animation: arrowFlow 2s linear infinite;
 }
 
-/* Street Label Styles */
-.street-label {
-  background: transparent !important;
-  border: none !important;
-}
-
-.street-label div {
-  pointer-events: none !important;
-  user-select: none !important;
-}
 
 
 /* Tooltip styling for labels */
