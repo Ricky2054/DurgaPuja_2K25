@@ -30,9 +30,9 @@ const HomePage = () => {
             <span className="english-text">Happy Durga Puja</span>
           </h1>
           <p className="hero-subtitle">
-            <span className="bengali-text">কলকাতার সবচেয়ে সুন্দর প্যান্ডেলগুলি আবিষ্কার করুন</span>
+            <span className="bengali-text">বাগুইআটির সবচেয়ে সুন্দর প্যান্ডেলগুলি আবিষ্কার করুন</span>
             <br />
-            <span className="english-text">Discover the most beautiful pandals of Kolkata</span>
+            <span className="english-text">Discover the most beautiful pandals of Baguiati</span>
           </p>
           <button className="explore-button" onClick={handleExploreMap}>
             <span className="bengali-text">মানচিত্র অন্বেষণ করুন</span>
@@ -56,8 +56,8 @@ const HomePage = () => {
             <div className="feature-icon">🗺️</div>
             <h3 className="bengali-text">ইন্টারেক্টিভ মানচিত্র</h3>
             <h3 className="english-text">Interactive Map</h3>
-            <p className="bengali-text">৮টি প্যান্ডেলের অবস্থান সহ বিস্তারিত মানচিত্র</p>
-            <p className="english-text">Detailed map with 8 pandal locations</p>
+            <p className="bengali-text">৪৮টি প্যান্ডেলের অবস্থান সহ বিস্তারিত মানচিত্র</p>
+            <p className="english-text">Detailed map with 48 pandal locations</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">🚗</div>
@@ -83,7 +83,7 @@ const HomePage = () => {
           <span className="english-text">Pandal Gallery</span>
         </h2>
         <div className="pandal-grid">
-          {pujoLocations.slice(0, 6).map((pujo, index) => (
+          {pujoLocations.map((pujo, index) => (
             <div key={pujo.id} className="pandal-card" onClick={() => handlePandalClick(pujo.id)}>
               <div className="pandal-number">{index + 1}</div>
               <div className="pandal-info">
@@ -116,12 +116,12 @@ const HomePage = () => {
           <div className="cultural-text">
             <p className="bengali-text">
               দুর্গা পূজা হল হিন্দু ধর্মের অন্যতম প্রধান উৎসব। এই উৎসবে মা দুর্গার পূজা করা হয়, 
-              যিনি মহিষাসুর নামক অসুরকে বধ করেছিলেন। কলকাতায় এই উৎসব বিশেষভাবে পালিত হয় এবং 
+              যিনি মহিষাসুর নামক অসুরকে বধ করেছিলেন। বাগুইআটিতে এই উৎসব বিশেষভাবে পালিত হয় এবং 
               বিভিন্ন প্যান্ডেলে সুন্দর সুন্দর মূর্তি ও সাজসজ্জা দেখা যায়।
             </p>
             <p className="english-text">
               Durga Puja is one of the most important festivals in Hinduism. This festival celebrates 
-              Goddess Durga, who defeated the demon Mahishasura. In Kolkata, this festival is celebrated 
+              Goddess Durga, who defeated the demon Mahishasura. In Baguiati, this festival is celebrated 
               with great enthusiasm and beautiful idols and decorations can be seen in various pandals.
             </p>
           </div>

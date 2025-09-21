@@ -1,0 +1,467 @@
+.traffic-flow-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+}
+
+/* Top Banner */
+.top-banner {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 0, 0.1) 0%, transparent 50%);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #ffeb3b;
+}
+
+.banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.banner-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-title .bengali-text {
+  display: block;
+  color: #ffeb3b;
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.banner-title .english-text {
+  display: block;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.banner-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.banner-subtitle .bengali-text {
+  display: block;
+  color: white;
+  margin-bottom: 0.2rem;
+}
+
+.banner-subtitle .english-text {
+  display: block;
+  color: #e0e0e0;
+}
+
+/* Back Button */
+.back-button {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.back-button:hover {
+  background: #e55a2b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+/* Pandal Info Card */
+.pandal-info-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.pandal-header {
+  text-align: center;
+}
+
+.pandal-name {
+  color: #ffeb3b;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pandal-description {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.pandal-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.feature-tag {
+  background: #ff6b35;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+/* Traffic Flow Card */
+.traffic-flow-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.traffic-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.traffic-title .bengali-text {
+  display: block;
+  color: #ffeb3b;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.traffic-title .english-text {
+  display: block;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Traffic Map Container */
+.traffic-map-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.traffic-map {
+  border: 3px solid #ffeb3b;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Custom Location Marker Styles */
+.custom-location-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-location-marker div {
+  transition: all 0.3s ease;
+}
+
+.custom-location-marker div:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Location marker animation */
+.custom-location-marker div > div:first-child {
+  animation: markerPulse 2s infinite;
+}
+
+@keyframes markerPulse {
+  0% {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  }
+  50% {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4), 0 0 0 8px rgba(255,255,255,0.1);
+  }
+  100% {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  }
+}
+
+/* Animated Arrow Styles */
+.animated-arrow {
+  animation: arrowFlow 2s linear infinite;
+}
+
+@keyframes arrowFlow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -20;
+  }
+}
+
+/* Leaflet polyline animation */
+.leaflet-interactive.animated-arrow {
+  animation: arrowFlow 2s linear infinite;
+}
+
+/* Nearby Options */
+.nearby-options {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.nearby-title {
+  margin-bottom: 1rem;
+}
+
+.nearby-title .bengali-text {
+  display: block;
+  color: #ffeb3b;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.nearby-title .english-text {
+  display: block;
+  color: white;
+  font-size: 1rem;
+}
+
+.nearby-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.nearby-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 0.75rem 1rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nearby-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nearby-btn.active {
+  background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+  border-color: #ff6b35;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.nearby-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.nearby-btn .btn-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.nearby-btn .bengali-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.nearby-btn .english-text {
+  font-size: 0.7rem;
+  opacity: 0.9;
+}
+
+.loading-indicator {
+  color: #ffeb3b;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.loading-indicator .bengali-text {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.loading-indicator .english-text {
+  display: block;
+  opacity: 0.8;
+}
+
+/* Legend */
+.traffic-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  color: white;
+  text-align: center;
+}
+
+.legend-marker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.legend-marker::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 60%;
+  height: 60%;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.pandal-marker {
+  background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+}
+
+.entry-marker {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+}
+
+.exit-marker {
+  background: linear-gradient(135deg, #F44336 0%, #d32f2f 100%);
+}
+
+.parking-marker {
+  background: linear-gradient(135deg, #FFC107 0%, #ffb300 100%);
+}
+
+.shop-marker {
+  background: linear-gradient(135deg, #FF5722 0%, #e64a19 100%);
+}
+
+.restaurants-marker {
+  background: linear-gradient(135deg, #FF5722 0%, #e64a19 100%);
+}
+
+.toilets-marker {
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+}
+
+.parking-marker {
+  background: linear-gradient(135deg, #FFC107 0%, #ffb300 100%);
+}
+
+.fuel-marker {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+}
+
+.legend-item .bengali-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.legend-item .english-text {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.location-count {
+  color: #ffeb3b;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: rgba(255, 235, 59, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 235, 59, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .traffic-map {
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+  }
+  
+  .traffic-lines {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .pandal-name {
+    font-size: 1.5rem;
+  }
+  
+  .traffic-title .bengali-text {
+    font-size: 1.2rem;
+  }
+  
+  .traffic-title .english-text {
+    font-size: 1rem;
+  }
+  
+  .traffic-legend {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nearby-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nearby-btn {
+    min-width: 200px;
+  }
+}

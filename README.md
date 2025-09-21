@@ -1,6 +1,6 @@
 # 🎭 Durga Puja Tourism Website
 
-A modern, interactive tourism website showcasing Durga Puja pandals in Kolkata with real-time traffic flow animations and parking area visualization.
+A modern, interactive tourism website showcasing Durga Puja pandals in Baguiati with real-time traffic flow animations and parking area visualization.
 
 ## ✨ Features
 
@@ -109,4 +109,4 @@ Feel free to contribute by:
 
 ---
 
-**Enjoy exploring the magnificent Durga Puja pandals of Kolkata! 🎉**
+**Enjoy exploring the magnificent Durga Puja pandals of Baguiati! 🎉**

@@ -68,13 +68,27 @@ const PandalPage = () => {
 
   return (
     <div className="pandal-page">
+      {/* Top Banner */}
+      <div className="top-banner">
+        <div className="banner-content">
+          <h1 className="banner-title">
+            <span className="bengali-text">দুর্গা পূজা ট্যুরিজম</span>
+            <span className="english-text">Durga Puja Tourism</span>
+          </h1>
+          <p className="banner-subtitle">
+            <span className="bengali-text">বাগুইআটির মহিমান্বিত প্যান্ডেলগুলি অন্বেষণ করুন</span>
+            <span className="english-text">Explore the magnificent pandals of Baguiati</span>
+          </p>
+        </div>
+      </div>
+
       {/* Header Section */}
       <div className="pandal-header">
         <div className="header-background"></div>
         <div className="header-content">
           <h1 className="pandal-title">{pandal.name}</h1>
-          <p className="pandal-motto">Brotherhood in Celebration</p>
-          <p className="pandal-details">Established 1968 • Community Harmony</p>
+          <p className="pandal-motto">{pandal.motto || "Community Celebration"}</p>
+          <p className="pandal-details">Established {pandal.established || "1970"} • {pandal.theme || "Community Spirit"}</p>
           
           <div className="action-buttons">
             <button className="btn btn-primary" onClick={handleGetDirections}>
@@ -85,7 +99,7 @@ const PandalPage = () => {
               <span className="btn-icon">📞</span>
               Call Now
             </button>
-            <button className="btn btn-info" onClick={() => navigate(`/pandal/${id}`)}>
+            <button className="btn btn-info" onClick={() => navigate(`/traffic-flow/${id}`)}>
               <span className="btn-icon">📍</span>
               Traffic Flow Map
             </button>
@@ -116,15 +130,15 @@ const PandalPage = () => {
             <div className="info-items">
               <div className="info-item">
                 <span className="info-icon">📅</span>
-                <span>Established: 1968</span>
+                <span>Established: {pandal.established || "1970"}</span>
               </div>
               <div className="info-item">
                 <span className="info-icon">❤️</span>
-                <span>Theme: Community Harmony</span>
+                <span>Theme: {pandal.theme || "Community Spirit"}</span>
               </div>
               <div className="info-item">
                 <span className="info-icon">📍</span>
-                <span>Address: {pandal.name}, Kolkata - 700159</span>
+                <span>Address: {pandal.address || `${pandal.name}, Baguiati - 700159`}</span>
               </div>
             </div>
           </div>
@@ -150,6 +164,11 @@ const PandalPage = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="bottom-section">
+        <div className="geometric-pattern"></div>
       </div>
 
       {/* Back to Map Button */}

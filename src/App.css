@@ -67,6 +67,19 @@ body::after {
   100% { transform: translateX(0px) translateY(0px); }
 }
 
+/* User Location Marker Animation */
+@keyframes userLocationPulse {
+  0% {
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(52, 152, 219, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.3);
+  }
+}
+
 .App {
   min-height: 100vh;
 }
