@@ -50,7 +50,7 @@ const HomePage = () => {
   const handleEmergencyCall = (service) => {
     const numbers = {
       ambulance: '108',
-      police: '100',
+      police: '+91 91478 89500', // Mobile number for police
       fire: '101'
     };
     
@@ -66,8 +66,12 @@ const HomePage = () => {
       police: {
         name: 'Police Stations',
         locations: [
-          { name: 'Baguiati Police Station', phone: '+91 33 2574 1234', address: 'Baguiati, Kolkata' },
-          { name: 'New Town Police Station', phone: '+91 33 2321 5678', address: 'New Town, Kolkata' }
+          { 
+            name: 'Baguiati Police Station', 
+            mobile: '+91 91478 89500', 
+            landline: '033 2559 8799', 
+            address: 'Baguiati, Kolkata' 
+          }
         ]
       },
       hospital: {
@@ -87,19 +91,36 @@ const HomePage = () => {
       metro: {
         name: 'Metro Stations',
         locations: [
-          { name: 'Baguiati Metro Station', address: 'VIP Road, Baguiati' },
-          { name: 'New Town Metro Station', address: 'New Town, Kolkata' }
+          { name: 'Bengal Chemical Metro Station', address: 'Bengal Chemical, Kolkata' },
+          { name: 'Dum Dum Metro Station', address: 'Dum Dum, Kolkata' }
         ]
       }
     };
 
     const serviceInfo = services[service];
     if (serviceInfo) {
-      const message = `${serviceInfo.name}:\n\n${serviceInfo.locations.map(loc => 
-        `${loc.name}\n${loc.address}${loc.phone ? `\nPhone: ${loc.phone}` : ''}`
-      ).join('\n\n')}`;
-      
-      alert(message);
+      if (service === 'police') {
+        // Special handling for police stations with mobile and landline options
+        const policeStation = serviceInfo.locations[0];
+        const message = `${serviceInfo.name}:\n\n${policeStation.name}\n${policeStation.address}\n\nContact Options:\n\n📱 Mobile: ${policeStation.mobile}\n📞 Landline: ${policeStation.landline}\n\nClick OK to call Mobile or Cancel to call Landline`;
+        
+        const choice = confirm(message);
+        
+        if (choice) {
+          // User chose mobile
+          window.open(`tel:${policeStation.mobile}`, '_self');
+        } else {
+          // User chose landline
+          window.open(`tel:${policeStation.landline}`, '_self');
+        }
+      } else {
+        // Regular handling for other services
+        const message = `${serviceInfo.name}:\n\n${serviceInfo.locations.map(loc => 
+          `${loc.name}\n${loc.address}${loc.phone ? `\nPhone: ${loc.phone}` : ''}`
+        ).join('\n\n')}`;
+        
+        alert(message);
+      }
     }
   };
 
@@ -165,17 +186,18 @@ const HomePage = () => {
 
   const handleEmergencyMain = () => {
     const emergencyOptions = [
-      'Police: 100',
+      'Police Mobile: +91 91478 89500',
+      'Police Landline: 033 2559 8799',
       'Ambulance: 108', 
       'Fire: 101',
       'Women Helpline: 1091',
       'Child Helpline: 1098'
     ];
     
-    const selected = prompt(`Emergency Services:\n\n${emergencyOptions.map((opt, index) => `${index + 1}. ${opt}`).join('\n')}\n\nEnter number (1-5) or call directly:`);
+    const selected = prompt(`Emergency Services:\n\n${emergencyOptions.map((opt, index) => `${index + 1}. ${opt}`).join('\n')}\n\nEnter number (1-6) or call directly:`);
     
     if (selected) {
-      const numbers = ['100', '108', '101', '1091', '1098'];
+      const numbers = ['+91 91478 89500', '033 2559 8799', '108', '101', '1091', '1098'];
       const index = parseInt(selected) - 1;
       if (index >= 0 && index < numbers.length) {
         window.open(`tel:${numbers[index]}`);
