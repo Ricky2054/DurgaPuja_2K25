@@ -190,7 +190,7 @@ const HomePage = () => {
       <div className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">
-            <span className="bengali-text">বাগুইআটি দুর্গা পূজা প্যারিক্রামা</span>
+            <span className="bengali-text">বাগুইআটি দুর্গা পূজা পরিক্রমা</span>
             <br />
             <span className="english-text">Baguiati Durga Puja Parikrama</span>
           </h1>
@@ -214,7 +214,7 @@ const HomePage = () => {
             </div>
           </div>
           <button className="explore-button magnetic-btn" onClick={handleExploreMap}>
-            <span className="bengali-text">প্যারিক্রামা শুরু করুন</span>
+            <span className="bengali-text">পরিক্রমা শুরু করুন</span>
             <br />
             <span className="english-text">Start Parikrama</span>
           </button>
@@ -320,8 +320,8 @@ const HomePage = () => {
       <div className="packages-section">
         <div className="section-header">
         <h2 className="section-title">
-            <span className="bengali-text">বাগুইআটি পূজা প্যারিক্রামা প্যাকেজ</span>
-            <span className="english-text">Baguiati Puja Parikrama Packages</span>
+            <span className="bengali-text">বাগুইআটি পূজা পরিক্রমা</span>
+            <span className="english-text">Baguiati Puja Parikrama</span>
         </h2>
           <p className="section-subtitle">
             Experience the joy, devotion, and magnificence of Baguiati's Durga Puja with our guided parikrama
