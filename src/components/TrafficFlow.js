@@ -31,6 +31,7 @@ const TrafficFlow = () => {
   });
   const [activeFilter, setActiveFilter] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   if (!pandal || !trafficPattern) {
     return <div>Traffic flow data not found</div>;
@@ -41,6 +42,13 @@ const TrafficFlow = () => {
       window.playDurgaSound('conch');
     }
     navigate(`/pandal-page/${id}`);
+  };
+
+  const toggleFullscreen = () => {
+    setIsFullscreen(!isFullscreen);
+    if (window.playDurgaSound) {
+      window.playDurgaSound('bell');
+    }
   };
 
   // Function to generate realistic local locations
@@ -573,14 +581,38 @@ const TrafficFlow = () => {
           )}
         </div>
         
-        <div className="traffic-map-container">
-          <MapContainer
-            center={[pandal.entryLat, pandal.entryLng]}
-            zoom={16}
-            style={{ height: '500px', width: '100%', borderRadius: '15px' }}
-            className="traffic-map"
-            key={`map-${pandal.id}`}
-          >
+        <div className={`traffic-map-container ${isFullscreen ? 'fullscreen-container' : ''}`}>
+          {/* Fullscreen Toggle Button */}
+          <div className="map-controls">
+            <button 
+              className="fullscreen-toggle-btn"
+              onClick={toggleFullscreen}
+              title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+            >
+              {isFullscreen ? (
+                <>
+                  <span className="bengali-text">ফুলস্ক্রিন বন্ধ করুন</span>
+                  <span className="english-text">Exit Fullscreen</span>
+                  <span className="icon">⤓</span>
+                </>
+              ) : (
+                <>
+                  <span className="bengali-text">ফুলস্ক্রিন দেখুন</span>
+                  <span className="english-text">Fullscreen Map</span>
+                  <span className="icon">⤢</span>
+                </>
+              )}
+            </button>
+          </div>
+          
+          <div className={`map-wrapper ${isFullscreen ? 'fullscreen-wrapper' : ''}`}>
+            <MapContainer
+              center={[pandal.entryLat, pandal.entryLng]}
+              zoom={16}
+              style={{ height: '100%', width: '100%' }}
+              className="traffic-map"
+              key={`map-${pandal.id}`}
+            >
             <TileLayer
               attribution='&copy; <a href="https://www.google.com/maps">Google Maps</a>'
               url="https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
@@ -863,6 +895,7 @@ const TrafficFlow = () => {
             })}
 
           </MapContainer>
+          </div>
         </div>
 
         {/* Legend */}

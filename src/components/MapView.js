@@ -25,12 +25,20 @@ const MapView = () => {
   const [selectedPandal, setSelectedPandal] = useState(null);
   const [showDirections, setShowDirections] = useState(false);
   const [directionsInfo, setDirectionsInfo] = useState(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handleBackClick = () => {
     if (window.playDurgaSound) {
       window.playDurgaSound('conch');
     }
     navigate('/');
+  };
+
+  const toggleFullscreen = () => {
+    setIsFullscreen(!isFullscreen);
+    if (window.playDurgaSound) {
+      window.playDurgaSound('bell');
+    }
   };
 
   // Create custom marker icon with error handling
@@ -296,13 +304,37 @@ const MapView = () => {
         </div>
       )}
       
-      <div className="map-container">
-        <MapContainer
-          center={[centerLat, centerLng]}
-          zoom={13}
-          style={{ height: '100%', width: '100%' }}
-          ref={mapRef}
-        >
+      <div className={`map-container ${isFullscreen ? 'fullscreen-container' : ''}`}>
+        {/* Fullscreen Toggle Button */}
+        <div className="map-controls">
+          <button 
+            className="fullscreen-toggle-btn"
+            onClick={toggleFullscreen}
+            title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+          >
+            {isFullscreen ? (
+              <>
+                <span className="bengali-text">ফুলস্ক্রিন বন্ধ করুন</span>
+                <span className="english-text">Exit Fullscreen</span>
+                <span className="icon">⤓</span>
+              </>
+            ) : (
+              <>
+                <span className="bengali-text">ফুলস্ক্রিন দেখুন</span>
+                <span className="english-text">Fullscreen Map</span>
+                <span className="icon">⤢</span>
+              </>
+            )}
+          </button>
+        </div>
+        
+        <div className={`map-wrapper ${isFullscreen ? 'fullscreen-wrapper' : ''}`}>
+          <MapContainer
+            center={[centerLat, centerLng]}
+            zoom={13}
+            style={{ height: '100%', width: '100%' }}
+            ref={mapRef}
+          >
         <TileLayer
           attribution='&copy; <a href="https://www.google.com/maps">Google Maps</a>'
           url="https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
@@ -478,6 +510,7 @@ const MapView = () => {
           </Marker>
         ))}
         </MapContainer>
+        </div>
       </div>
       
       {/* Nearby Pandals List */}

@@ -331,10 +331,98 @@ body::after {
   transition: all 0.3s ease;
 }
 
+.map-container.fullscreen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  background: #000;
+}
+
+/* Map Wrapper for MapView */
+.map-container .map-wrapper {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.map-container .map-wrapper.fullscreen-wrapper {
+  height: 100vh;
+  width: 100vw;
+  border-radius: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
 .map-container:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
+
+/* Map Controls for MapView */
+.map-container .map-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.map-container.fullscreen-container .map-controls {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10000;
+}
+
+.map-container .fullscreen-toggle-btn {
+  background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(142, 68, 173, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.map-container .fullscreen-toggle-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(142, 68, 173, 0.4);
+  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+}
+
+.map-container .fullscreen-toggle-btn .icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.map-container .fullscreen-toggle-btn .bengali-text {
+  font-family: 'Noto Sans Bengali', sans-serif;
+  display: block;
+  font-size: 0.8rem;
+}
+
+.map-container .fullscreen-toggle-btn .english-text {
+  display: block;
+  font-size: 0.8rem;
+}
+
 
 /* Custom Map Marker Styles */
 .custom-marker {
@@ -2558,6 +2646,20 @@ body::after {
     height: 50vh;
     margin: 0.5rem;
     border-radius: 15px;
+  }
+  
+  .map-container .fullscreen-toggle-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .map-container .fullscreen-toggle-btn .bengali-text,
+  .map-container .fullscreen-toggle-btn .english-text {
+    font-size: 0.7rem;
+  }
+  
+  .map-container .fullscreen-toggle-btn .icon {
+    font-size: 1rem;
   }
   
   .pandal-detail-container {
