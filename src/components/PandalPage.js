@@ -146,10 +146,110 @@ const PandalPage = () => {
           {/* Contact Card */}
           <div className="info-card">
             <h3 className="card-title">Contact Information</h3>
+            
+            {/* Committee Members */}
+            <div className="committee-members">
+              {pandal.contactPerson && (
+                <div className="member-info">
+                  <div className="contact-item">
+                    <span className="contact-icon">👑</span>
+                    <span>President</span>
+                    <span className="member-name">{pandal.contactPerson}</span>
+                  </div>
+                  {pandal.contactPersonPhone && (
+                    <div className="contact-item">
+                      <span className="contact-icon">📱</span>
+                      <span>President Phone</span>
+                      <button className="contact-btn phone-btn" onClick={() => window.open(`tel:${pandal.contactPersonPhone}`)}>
+                        {pandal.contactPersonPhone}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+              
+              {pandal.secretary && (
+                <div className="member-info">
+                  <div className="contact-item">
+                    <span className="contact-icon">📋</span>
+                    <span>Secretary</span>
+                    <span className="member-name">{pandal.secretary}</span>
+                  </div>
+                  {pandal.secretaryPhone && (
+                    <div className="contact-item">
+                      <span className="contact-icon">📱</span>
+                      <span>Secretary Phone</span>
+                      <button className="contact-btn phone-btn" onClick={() => window.open(`tel:${pandal.secretaryPhone}`)}>
+                        {pandal.secretaryPhone}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+              
+              {pandal.treasurer && (
+                <div className="member-info">
+                  <div className="contact-item">
+                    <span className="contact-icon">💰</span>
+                    <span>Treasurer</span>
+                    <span className="member-name">{pandal.treasurer}</span>
+                  </div>
+                  {pandal.treasurerPhone && (
+                    <div className="contact-item">
+                      <span className="contact-icon">📱</span>
+                      <span>Treasurer Phone</span>
+                      <button className="contact-btn phone-btn" onClick={() => window.open(`tel:${pandal.treasurerPhone}`)}>
+                        {pandal.treasurerPhone}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+              
+              {pandal.jointSecretary && (
+                <div className="member-info">
+                  <div className="contact-item">
+                    <span className="contact-icon">📝</span>
+                    <span>Joint Secretary</span>
+                    <span className="member-name">{pandal.jointSecretary}</span>
+                  </div>
+                  {pandal.jointSecretaryPhone && (
+                    <div className="contact-item">
+                      <span className="contact-icon">📱</span>
+                      <span>Joint Secretary Phone</span>
+                      <button className="contact-btn phone-btn" onClick={() => window.open(`tel:${pandal.jointSecretaryPhone}`)}>
+                        {pandal.jointSecretaryPhone}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+              
+              {pandal.viceSecretary && (
+                <div className="member-info">
+                  <div className="contact-item">
+                    <span className="contact-icon">👥</span>
+                    <span>Vice Secretary</span>
+                    <span className="member-name">{pandal.viceSecretary}</span>
+                  </div>
+                  {pandal.viceSecretaryPhone && (
+                    <div className="contact-item">
+                      <span className="contact-icon">📱</span>
+                      <span>Vice Secretary Phone</span>
+                      <button className="contact-btn phone-btn" onClick={() => window.open(`tel:${pandal.viceSecretaryPhone}`)}>
+                        {pandal.viceSecretaryPhone}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {/* General Contact */}
             <div className="contact-items">
               <div className="contact-item">
                 <span className="contact-icon">📞</span>
-                <span>Phone</span>
+                <span>Main Phone</span>
                 <button className="contact-btn phone-btn" onClick={handleCall}>
                   {pandal.phone || '+91 98765 43213'}
                 </button>

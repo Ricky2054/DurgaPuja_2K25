@@ -16,8 +16,12 @@ export const pujoLocations = [
     motto: "Unity in Diversity",
     theme: "Traditional Heritage",
     established: "1952",
-    phone: "+91 98765 43210",
-    address: "Rail Pukur, Baguiati, Baguiati - 700159"
+    phone: "+91 98302 74220",
+    contactPerson: "Souren Mukherjee (President)",
+    contactPersonPhone: "+91 98302 74220",
+    secretary: "Pintu Bhattacharya (Secretary)",
+    secretaryPhone: "+91 92313 98840",
+    address: "DA-4 Deshbandhu Nagar Rail Pukur Road Baguihati Kol - 59"
   },
   {
     id: 2,
@@ -35,8 +39,12 @@ export const pujoLocations = [
     motto: "Together We Celebrate",
     theme: "Modern Community Spirit",
     established: "1965",
-    phone: "+91 98765 43211",
-    address: "Arjunpur, Baguiati, Baguiati - 700159"
+    phone: "+91 94335 23347",
+    contactPerson: "Mousumi Naskar Dutta (President)",
+    contactPersonPhone: "+91 94335 23347",
+    secretary: "Sonali Banerjee (Secretary)",
+    secretaryPhone: "+91 82400 44022",
+    address: "NC-15 Arjunpur Taltala Kolkata-700059"
   },
   {
     id: 3,
@@ -54,8 +62,12 @@ export const pujoLocations = [
     motto: "Brotherhood in Celebration",
     theme: "Community Harmony",
     established: "1968",
-    phone: "+91 98765 43213",
-    address: "Mastarda Smriti Sangha, Baguiati - 700159"
+    phone: "+91 90513 21782",
+    contactPerson: "Shampa Chakraborty (President)",
+    contactPersonPhone: "+91 90513 21782",
+    secretary: "Simul Majumder (Secretary)",
+    secretaryPhone: "+91 98312 22229",
+    address: "Prafulla Kanan (West), Kestopur, Kolkata-700101"
   },
   {
     id: 4,
@@ -73,8 +85,12 @@ export const pujoLocations = [
     motto: "Grand Celebrations",
     theme: "Elaborate Decorations",
     established: "1972",
-    phone: "+91 98765 43214",
-    address: "Aswininagar, Baguiati, Baguiati - 700159"
+    phone: "+91 98366 06896",
+    contactPerson: "Smt. Piyali Sarkar (President)",
+    contactPersonPhone: "+91 98366 06896",
+    secretary: "Tapan Bagui (Jt. Secretary)",
+    secretaryPhone: "+91 91630 29155",
+    address: "Aswininagar, Hatiara Road, Near Zarda Bagan, Kolkata 700159"
   },
   {
     id: 5,
@@ -92,8 +108,12 @@ export const pujoLocations = [
     motto: "Community First",
     theme: "Traditional Rituals",
     established: "1960",
-    phone: "+91 98765 43215",
-    address: "Dashadrone, Baguiati, Baguiati - 700159"
+    phone: "+91 83370 29877",
+    contactPerson: "Santosh Ray (President)",
+    contactPersonPhone: "+91 83370 29877",
+    secretary: "Chaandan Pradhan (Jt. Secretary)",
+    secretaryPhone: "+91 82404 91393",
+    address: "Manicktala Khelar Math, Dashadrone, Rajarhat Road, PS - Baguiati, PO R- Gopalpur, PIN: 700136, West Bengal"
   },
   {
     id: 6,
@@ -111,8 +131,12 @@ export const pujoLocations = [
     motto: "Heritage & Tradition",
     theme: "Cultural Heritage",
     established: "1975",
-    phone: "+91 98765 43216",
-    address: "Kestopur, Baguiati, Baguiati - 700159"
+    phone: "+91 98300 56986",
+    contactPerson: "Ashoke Patra (President)",
+    contactPersonPhone: "+91 98300 56986",
+    secretary: "Ruman Chanda (Secretary)",
+    secretaryPhone: "+91 98308 62255",
+    address: "Prafulla Kanan (West), Kestopur, Kol-700101"
   },
   {
     id: 7,
@@ -130,8 +154,12 @@ export const pujoLocations = [
     motto: "Service to Community",
     theme: "Social Welfare",
     established: "1970",
-    phone: "+91 98765 43217",
-    address: "Nirvik Sangha, Baguiati, Baguiati - 700159"
+    phone: "+91 99034 63836",
+    contactPerson: "Tanmoy Roy (President)",
+    contactPersonPhone: "+91 99034 63836",
+    secretary: "Kaushik Banerjee (Jt. Secretary)",
+    secretaryPhone: "+91 98310 21633",
+    address: "Sachindra Lal Sarani, Joramandir, Baguiati, Joramondir"
   },
   {
     id: 8,
@@ -149,12 +177,16 @@ export const pujoLocations = [
     motto: "Learning Through Celebration",
     theme: "Educational Excellence",
     established: "1980",
-    phone: "+91 98765 43218",
-    address: "Prafulla Kannan, Baguiati, Baguiati - 700159"
+    phone: "+91 84201 5726",
+    contactPerson: "Subhas Basak (President)",
+    contactPersonPhone: "+91 84201 5726",
+    secretary: "Nilendu Ch. Chaudhury (Secretary)",
+    secretaryPhone: "+91 98307 85400",
+    address: "Prafulla Kanan Krishnapur, Kol- 101"
   },
   {
     id: 9,
-    name: "Yubak Sangha Sarbajanin Durgautsav Committee",
+    name: "YUBAK SANGHA SARBAJANIN DURGATSAV COMMITTEE",
     entryLat: 22.6167634,
     entryLng: 88.433892,
     exitLat: 22.6167634,
@@ -168,12 +200,16 @@ export const pujoLocations = [
     motto: "Youth Power",
     theme: "Youth Leadership",
     established: "1985",
-    phone: "+91 98765 43219",
-    address: "Yubak Sangha, Baguiati, Baguiati - 700159"
+    phone: "+91 98314 47453",
+    contactPerson: "Sushanta Sen Gupta (President)",
+    contactPersonPhone: "+91 98314 47453",
+    secretary: "Kamal Naskar (Secretary)",
+    secretaryPhone: "+91 93301 12513",
+    address: "Jyangra Raghunathpur VIP Road"
   },
   {
     id: 10,
-    name: "Triveni Mohila Sanskriti Sansthan",
+    name: "TRIBENI MAHILA SANSKRITIK SANSTHA",
     entryLat: 22.6205239,
     entryLng: 88.4352321,
     exitLat: 22.6205239,
@@ -187,12 +223,16 @@ export const pujoLocations = [
     motto: "Women Empowerment",
     theme: "Cultural Heritage",
     established: "1990",
-    phone: "+91 98765 43220",
-    address: "Triveni Mohila, Baguiati, Baguiati - 700159"
+    phone: "+91 94331 42088",
+    contactPerson: "Sima Roy (President)",
+    contactPersonPhone: "+91 94331 42088",
+    secretary: "Aloka Sanyal (Secretary)",
+    secretaryPhone: "+91 98307 74097",
+    address: "Tegharia, Lichubagan, Near Marble Rock, Kolkata - 700059"
   },
   {
     id: 11,
-    name: "VIP Enclave Puja Committee",
+    name: "VIP ENCLAVE PUJA COMMITTEE",
     entryLat: 22.6136361,
     entryLng: 88.4303544,
     exitLat: 22.6136361,
@@ -206,8 +246,12 @@ export const pujoLocations = [
     motto: "Luxury & Tradition",
     theme: "Modern Amenities",
     established: "1995",
-    phone: "+91 98765 43221",
-    address: "VIP Enclave, Baguiati, Baguiati - 700159"
+    phone: "+91 98319 35899",
+    contactPerson: "Surendra Vyas (President)",
+    contactPersonPhone: "+91 98319 35899",
+    secretary: "Swagata Sengupta (Secretary)",
+    secretaryPhone: "+91 98307 40255",
+    address: "VIP Enclave VIP Road Baguihati Kolkata 700059"
   },
   {
     id: 12,
@@ -225,12 +269,16 @@ export const pujoLocations = [
     motto: "Community Spirit",
     theme: "Residential Harmony",
     established: "1998",
-    phone: "+91 98765 43222",
-    address: "Regent Court, Baguiati, Baguiati - 700159"
+    phone: "+91 70011 09329",
+    contactPerson: "Goutam Kumar Ghosh (President)",
+    contactPersonPhone: "+91 70011 09329",
+    secretary: "Sourav Baheti (Secretary)",
+    secretaryPhone: "+91 98312 22290",
+    address: "Regent Court, Raghunathpur, Kolkata-700059"
   },
   {
     id: 13,
-    name: "Raghunathpur Purba Para Amra Sobai Club",
+    name: "PURBA RAGHUNATHPUR SARBOJANIN DURGOUTSAV COMMITTEE",
     entryLat: 22.618865,
     entryLng: 88.4324179,
     exitLat: 22.618865,
@@ -244,12 +292,16 @@ export const pujoLocations = [
     motto: "Neighborhood Unity",
     theme: "Local Community",
     established: "1982",
-    phone: "+91 98765 43223",
-    address: "Raghunathpur, Baguiati, Baguiati - 700159"
+    phone: "+91 98302 79477",
+    contactPerson: "Probin Kr. Sadhu (President)",
+    contactPersonPhone: "+91 98302 79477",
+    secretary: "Dipendra Nath Hazra (Secretary)",
+    secretaryPhone: "+91 98302 10082",
+    address: "RAA-27, Raghunathpur, Raghunathpur East, Kolkata-700059"
   },
   {
     id: 14,
-    name: "Naba Tarun Sangha",
+    name: "NABA TARUN SANGHA",
     entryLat: 22.6170987,
     entryLng: 88.4256785,
     exitLat: 22.6170987,
@@ -263,8 +315,12 @@ export const pujoLocations = [
     motto: "New Generation",
     theme: "Modern Approach",
     established: "1988",
-    phone: "+91 98765 43224",
-    address: "Naba Tarun, Baguiati, Baguiati - 700159"
+    phone: "+91 80174 71350",
+    contactPerson: "Jiban Saha (President)",
+    contactPersonPhone: "+91 80174 71350",
+    secretary: "Atanu Sinha (Secretary)",
+    secretaryPhone: "+91 98046 91688",
+    address: "DD/13 DB Nagar, Saha Para Baguiati, Kolkata 700059"
   },
   {
     id: 15,
@@ -282,12 +338,16 @@ export const pujoLocations = [
     motto: "Development & Heritage",
     theme: "Community Development",
     established: "1978",
-    phone: "+91 98765 43225",
-    address: "Nazrul Park, Baguiati, Baguiati - 700159"
+    phone: "+91 98307 02406",
+    contactPerson: "Indranath Bagui (President)",
+    contactPersonPhone: "+91 98307 02406",
+    secretary: "Utshab Ghosh (Secretary)",
+    secretaryPhone: "+91 82405 29820",
+    address: "V.I.P Road, Nazrul Park, Kolkata-700159"
   },
   {
     id: 16,
-    name: "Paschim Narayantala Sarbojonin Durgotsav Milan Sagha",
+    name: "PASCHIM NARAYANTALA SARBOJANIN DURGOTSAV ORG BY MILAN SANGHA",
     entryLat: 22.6071374,
     entryLng: 88.426843,
     exitLat: 22.6071374,
@@ -301,12 +361,16 @@ export const pujoLocations = [
     motto: "Unity in Celebration",
     theme: "Traditional Values",
     established: "1973",
-    phone: "+91 98765 43226",
-    address: "Paschim Narayantala, Baguiati, Baguiati - 700159"
+    phone: "+91 98300 20056",
+    contactPerson: "Dr. P. Choudhary (President)",
+    contactPersonPhone: "+91 98300 20056",
+    secretary: "Sunit Kundu (Secretary)",
+    secretaryPhone: "+91 62903 24490",
+    address: "GB-50, Narayantala West, Kolkata-700059"
   },
   {
     id: 17,
-    name: "Shastribagan Sporting Club Durgoursav Samiti",
+    name: "SHASTRIBAGAN SPORTING CLUB DURGOTSAV COMMITTEE",
     entryLat: 22.6104433,
     entryLng: 88.4278543,
     exitLat: 22.6104433,
@@ -320,12 +384,18 @@ export const pujoLocations = [
     motto: "Sports & Spirituality",
     theme: "Athletic Excellence",
     established: "1983",
-    phone: "+91 98765 43227",
-    address: "Shastribagan, Baguiati, Baguiati - 700159"
+    phone: "+91 92900 45929",
+    contactPerson: "Anil Loharika (President)",
+    contactPersonPhone: "+91 92900 45929",
+    secretary: "Subhajit Mitra (Secretary)",
+    secretaryPhone: "+91 98316 44382",
+    viceSecretary: "Mihir Ghose (Vice Secretary)",
+    viceSecretaryPhone: "+91 93307 77757",
+    address: "DC-2/13, Shastribagan, Baguihati, Joramandir, Kolkata-700059"
   },
   {
     id: 18,
-    name: "Swamiji Sakhti Peeth",
+    name: "SWAMIJI SAKTI PEETH",
     entryLat: 22.614532688406825,
     entryLng: 88.43858420848846,
     exitLat: 22.614532688406825,
@@ -339,12 +409,16 @@ export const pujoLocations = [
     motto: "Spiritual Harmony",
     theme: "Religious Significance",
     established: "1975",
-    phone: "+91 98765 43228",
-    address: "Swamiji Sakhti Peeth, Baguiati, Baguiati - 700159"
+    phone: "+91 62909 67912",
+    contactPerson: "Ranjit Kar (President)",
+    contactPersonPhone: "+91 62909 67912",
+    secretary: "Sujit Mondal (Secretary)",
+    secretaryPhone: "+91 98300 22397",
+    address: "Jyangra Bottala, Hatiara Main Road, Kolkata - 59"
   },
   {
     id: 19,
-    name: "Jyangara Mahamaya Sebak Sangha",
+    name: "JYANGRA MAHAMAYA SEBAK SANGHA",
     entryLat: 22.6115605,
     entryLng: 88.4377149,
     exitLat: 22.6115605,
@@ -358,8 +432,12 @@ export const pujoLocations = [
     motto: "Service Above Self",
     theme: "Community Service",
     established: "1987",
-    phone: "+91 98765 43229",
-    address: "Jyangara Mahamaya, Baguiati, Baguiati - 700159"
+    phone: "+91 98360 65329",
+    contactPerson: "Sanjay Das (President)",
+    contactPersonPhone: "+91 98360 65329",
+    secretary: "Abhisake Das (Secretary)",
+    secretaryPhone: "+91 98046 08548",
+    address: "Jyangra Dakshin Math Adhibasibrinda, Baguiati, Kolkata 700059"
   },
   {
     id: 20,
@@ -377,12 +455,16 @@ export const pujoLocations = [
     motto: "United We Stand",
     theme: "Community Unity",
     established: "1981",
-    phone: "+91 98765 43230",
-    address: "Shib Sankar, Baguiati, Baguiati - 700159"
+    phone: "+91 90516 44849",
+    contactPerson: "Rajen Bala (President)",
+    contactPersonPhone: "+91 90516 44849",
+    secretary: "Sanjit Mondal (Secretary)",
+    secretaryPhone: "+91 62906 14760",
+    address: "Shib Sankar Pally, PO: Aswininagar, PS: Baguiati, Kolkata-700159"
   },
   {
     id: 21,
-    name: "Jhawatalal Progressive Apartment Owners Association",
+    name: "JHAWTALA PROGRESSIVE APARTMENT OWNERS ASSOCIATION",
     entryLat: 22.6209457,
     entryLng: 88.4392809,
     exitLat: 22.6209457,
@@ -396,12 +478,16 @@ export const pujoLocations = [
     motto: "Progress & Unity",
     theme: "Modern Facilities",
     established: "1992",
-    phone: "+91 98765 43231",
-    address: "Jhawatalal, Baguiati, Baguiati - 700159"
+    phone: "+91 98744 52436",
+    contactPerson: "Prabir Kumar Paul (President)",
+    contactPersonPhone: "+91 98744 52436",
+    secretary: "Sanjukta Kar (Secretary)",
+    secretaryPhone: "+91 98307 79470",
+    address: "Naba Balak Sangha Prangan, Jhawtala Road Kolkata -700157"
   },
   {
     id: 22,
-    name: "Mitra Sangsad",
+    name: "MITRA SANGSAD",
     entryLat: 22.6189534,
     entryLng: 88.4362964,
     exitLat: 22.6189534,
@@ -415,12 +501,18 @@ export const pujoLocations = [
     motto: "Friendship Forever",
     theme: "Community Bonding",
     established: "1984",
-    phone: "+91 98765 43232",
-    address: "Mitra Sangsad, Baguiati, Baguiati - 700159"
+    phone: "+91 93307 32737",
+    contactPerson: "Pallab Saha (President)",
+    contactPersonPhone: "+91 93307 32737",
+    secretary: "Dipak Das (Secretary)",
+    secretaryPhone: "+91 70445 61696",
+    treasurer: "Partha Sarathi Dutta (Treasurer)",
+    treasurerPhone: "+91 98302 02111",
+    address: "Gobinda Nibas, Khelar Math, Kolkata - 59"
   },
   {
     id: 23,
-    name: "Jyangra Sishu Kalyan Sangha",
+    name: "JYANGRA SISHU KALYAN SANGHA",
     entryLat: 22.6143922,
     entryLng: 88.4382009,
     exitLat: 22.6143922,
@@ -434,12 +526,16 @@ export const pujoLocations = [
     motto: "Children First",
     theme: "Child Development",
     established: "1989",
-    phone: "+91 98765 43233",
-    address: "Jyangra Sishu, Baguiati, Baguiati - 700159"
+    phone: "+91 98360 24869",
+    contactPerson: "Mrityunjoy Mallick (President)",
+    contactPersonPhone: "+91 98360 24869",
+    secretary: "Rahul Mondal (Secretary)",
+    secretaryPhone: "+91 98753 56025",
+    address: "Jyangra 4 No. Colony, Kolkata-700059"
   },
   {
     id: 24,
-    name: "Abhiyatrik",
+    name: "ABHIYATRIK",
     entryLat: 22.6070439,
     entryLng: 88.4344094,
     exitLat: 22.6070439,
@@ -453,12 +549,18 @@ export const pujoLocations = [
     motto: "Art & Culture",
     theme: "Artistic Expressions",
     established: "1976",
-    phone: "+91 98765 43234",
-    address: "Abhiyatrik, Baguiati, Baguiati - 700159"
+    phone: "+91 89102 75558",
+    contactPerson: "Mahendra Agarwal (President)",
+    contactPersonPhone: "+91 89102 75558",
+    secretary: "Arun Ray (Jt. Secretary)",
+    secretaryPhone: "+91 90735 06968",
+    jointSecretary: "Sujit Hira (Jt. Secretary)",
+    jointSecretaryPhone: "+91 90735 06968",
+    address: "Aswininagar, Near Foira Bawan, Kolkata 700159"
   },
   {
     id: 25,
-    name: "Ujjal Sangha Durgapujo Committee",
+    name: "UJJAL SANGHA DURGAPUJA COMMITTEE",
     entryLat: 22.6040707,
     entryLng: 88.4351811,
     exitLat: 22.6040707,
@@ -472,12 +574,16 @@ export const pujoLocations = [
     motto: "Bright Future",
     theme: "Enlightenment",
     established: "1986",
-    phone: "+91 98765 43235",
-    address: "Ujjal Sangha, Baguiati, Baguiati - 700159"
+    phone: "+91 84205 62207",
+    contactPerson: "Jhunku Mondal (President)",
+    contactPersonPhone: "+91 84205 62207",
+    secretary: "Ajay Naskar (Jt. Secretary)",
+    secretaryPhone: "+91 91630 05497",
+    address: "Jagat Pur, Ward No 23, PO Gouranga Nagar PS Baguiati, Kol 700162"
   },
   {
     id: 26,
-    name: "Udyan Pally Sarbojonin Durgoursav",
+    name: "Udayanpally Sarbojonin Durgaotsav",
     entryLat: 22.60449438471859,
     entryLng: 88.42924006283283,
     exitLat: 22.60449438471859,
@@ -491,8 +597,12 @@ export const pujoLocations = [
     motto: "Green & Clean",
     theme: "Environmental Awareness",
     established: "1991",
-    phone: "+91 98765 43236",
-    address: "Udyan Pally, Baguiati, Baguiati - 700159"
+    phone: "+91 98315 11482",
+    contactPerson: "Pradip Mistry (President)",
+    contactPersonPhone: "+91 98315 11482",
+    secretary: "Animesh Mistry (Secretary)",
+    secretaryPhone: "+91 70033 20097",
+    address: "Udayan Pally, Aswininagar, Kol-700159"
   },
   {
     id: 27,
@@ -510,12 +620,16 @@ export const pujoLocations = [
     motto: "Excellence & Elegance",
     theme: "Premium Facilities",
     established: "1996",
-    phone: "+91 98765 43237",
-    address: "Club Town, Baguiati, Baguiati - 700159"
+    phone: "+91 90517 25222",
+    contactPerson: "Swapan Kr. Deb (President)",
+    contactPersonPhone: "+91 90517 25222",
+    secretary: "Subhash Chandra Roy (Secretary)",
+    secretaryPhone: "+91 94330 47350",
+    address: "77CC/2, Anupama Housing Complex, Phase-II VIP Road, Near Haldiram Food, Kolkata-700052"
   },
   {
     id: 28,
-    name: "Chinar Park Adhibasi Bridho",
+    name: "CHINAR PARK ADHIBASIBRINDA",
     entryLat: 22.624605,
     entryLng: 88.4397658,
     exitLat: 22.624605,
@@ -529,12 +643,16 @@ export const pujoLocations = [
     motto: "Heritage & Pride",
     theme: "Traditional Heritage",
     established: "1979",
-    phone: "+91 98765 43238",
-    address: "Chinar Park, Baguiati, Baguiati - 700159"
+    phone: "+91 98312 78878",
+    contactPerson: "Shyamal Dey (President)",
+    contactPersonPhone: "+91 98312 78878",
+    secretary: "Rakesh Shaw (Secretary)",
+    secretaryPhone: "+91 98305 55873",
+    address: "Chinar Park, P.O: Hatiara, Kolkata-700157"
   },
   {
     id: 29,
-    name: "Jhawatalal Sarbojonin",
+    name: "JHAWTALA SARBOJANIN DURGOTSAV COMMITTEE",
     entryLat: 22.6208976,
     entryLng: 88.4399459,
     exitLat: 22.6208976,
@@ -548,8 +666,12 @@ export const pujoLocations = [
     motto: "Public Participation",
     theme: "Community Organization",
     established: "1980",
-    phone: "+91 98765 43239",
-    address: "Jhawatalal, Baguiati, Baguiati - 700159"
+    phone: "+91 98744 52436",
+    contactPerson: "Prabir Kumar Paul (President)",
+    contactPersonPhone: "+91 98744 52436",
+    secretary: "Sanjukta Kar (Secretary)",
+    secretaryPhone: "+91 98307 79470",
+    address: "Naba Balak Sangha Prangan, Jhawtala Road Kolkata -700157"
   },
   {
     id: 30,
@@ -567,12 +689,16 @@ export const pujoLocations = [
     motto: "Welfare First",
     theme: "Community Welfare",
     established: "1993",
-    phone: "+91 98765 43240",
-    address: "Natural Heights S, Baguiati, Baguiati - 700159"
+    phone: "+91 98308 90996",
+    contactPerson: "Amit Sarat (President)",
+    contactPersonPhone: "+91 98308 90996",
+    secretary: "Kishan Khaitan (Secretary)",
+    secretaryPhone: "+91 90079 53333",
+    address: "137 V.I.P. Road"
   },
   {
     id: 31,
-    name: "Natural Heights Phase 2",
+    name: "NATURAL HEIGHTS PHASE 2 CULTURAL COMMITEE",
     entryLat: 22.6294966,
     entryLng: 88.4359289,
     exitLat: 22.6294966,
@@ -586,12 +712,16 @@ export const pujoLocations = [
     motto: "Phase 2 Excellence",
     theme: "Modern Amenities",
     established: "1997",
-    phone: "+91 98765 43241",
-    address: "Natural Heights Phase 2, Baguiati, Baguiati - 700159"
+    phone: "+91 83360 38043",
+    contactPerson: "Anup Kumar Sharma (President)",
+    contactPersonPhone: "+91 83360 38043",
+    secretary: "Narendra Kumar Sharma (Secretary)",
+    secretaryPhone: "+91 98310 02323",
+    address: "137, VIP Road"
   },
   {
     id: 32,
-    name: "Panchavati Complex",
+    name: "PANCHVATI COMPLEX DURGOTSAV COMMITTEE",
     entryLat: 22.6294885,
     entryLng: 88.4342949,
     exitLat: 22.6294885,
@@ -605,12 +735,16 @@ export const pujoLocations = [
     motto: "Tradition & Modernity",
     theme: "Traditional Values",
     established: "1994",
-    phone: "+91 98765 43242",
-    address: "Panchavati Complex, Baguiati, Baguiati - 700159"
+    phone: "+91 74398 05525",
+    contactPerson: "Arunima Ghosh (President)",
+    contactPersonPhone: "+91 74398 05525",
+    secretary: "Psamadrita Niyogo (Secretary)",
+    secretaryPhone: "+91 70449 92820",
+    address: "VIP Road Kaikhali"
   },
   {
     id: 33,
-    name: "Space Town Welfare Association",
+    name: "SPACE TOWN WELFARE ASSOCIATION",
     entryLat: 22.6220369,
     entryLng: 88.4318518,
     exitLat: 22.6220369,
@@ -624,8 +758,12 @@ export const pujoLocations = [
     motto: "Reach for the Stars",
     theme: "Space Theme",
     established: "1999",
-    phone: "+91 98765 43243",
-    address: "Space Town, Baguiati, Baguiati - 700159"
+    phone: "+91 98319 23040",
+    contactPerson: "Dr. Barnali Ghosh (President)",
+    contactPersonPhone: "+91 98319 23040",
+    secretary: "Sharmista Raha (Secretary)",
+    secretaryPhone: "+91 98311 25178",
+    address: "Space Town Housing Complex V.I.P. Road Kolkata - 700052"
   },
   {
     id: 34,
@@ -643,8 +781,12 @@ export const pujoLocations = [
     motto: "Unique & Beautiful",
     theme: "Unique Decorations",
     established: "2000",
-    phone: "+91 98765 43244",
-    address: "Anupama, Baguiati, Baguiati - 700159"
+    phone: "+91 90735 88937",
+    contactPerson: "Soma Basu (President)",
+    contactPersonPhone: "+91 90735 88937",
+    secretary: "Swati Ghosh (Secretary)",
+    secretaryPhone: "+91 62917 49983",
+    address: "Anupama Housing Complex, Community Centre, VIP Road, Kolkata - 700052"
   },
   {
     id: 35,
@@ -662,12 +804,16 @@ export const pujoLocations = [
     motto: "Green Living",
     theme: "Environmental Consciousness",
     established: "2001",
-    phone: "+91 98765 43245",
-    address: "Koyla Vihar, Baguiati, Baguiati - 700159"
+    phone: "+91 98301 48610",
+    contactPerson: "Prithish Bhowmik (President)",
+    contactPersonPhone: "+91 98301 48610",
+    secretary: "Arup Kr. Thakur (Secretary)",
+    secretaryPhone: "+91 80177 33085",
+    address: "Koyla Vihar Vasundhara, VIP Road, Kolkata-700052"
   },
   {
     id: 36,
-    name: "Deshbandhu Nagar Sarbojanin Durgoursav Janakalan Samiti",
+    name: "DESHBANDHU NAGAR SARBOJANIN DURGOTSAB PATHSALA",
     entryLat: 22.6173432,
     entryLng: 88.4254832,
     exitLat: 22.6173432,
@@ -681,12 +827,16 @@ export const pujoLocations = [
     motto: "Public Awareness",
     theme: "Community Committee",
     established: "1977",
-    phone: "+91 98765 43246",
-    address: "Deshbandhu Nagar, Baguiati, Baguiati - 700159"
+    phone: "+91 98304 16599",
+    contactPerson: "Subhas Saha (President)",
+    contactPersonPhone: "+91 98304 16599",
+    secretary: "Sumit Roy (Secretary)",
+    secretaryPhone: "+91 98740 61952",
+    address: "AA-8/4 D B Nagar Baguiat Deshbandhu Nagar Kol 59"
   },
   {
     id: 37,
-    name: "Deshbandhu Nagar Pally Unanyan Samiti",
+    name: "DESHBANDHU NAGAR SARBOJANIN DURGOTSAB (JANAKALYAN SAMITY)",
     entryLat: 22.6155584,
     entryLng: 88.4247046,
     exitLat: 22.6155584,
@@ -700,12 +850,16 @@ export const pujoLocations = [
     motto: "Development & Growth",
     theme: "Community Development",
     established: "1974",
-    phone: "+91 98765 43247",
-    address: "Deshbandhu Nagar, Baguiati, Baguiati - 700159"
+    phone: "+91 98308 42848",
+    contactPerson: "Samir Dutta (President)",
+    contactPersonPhone: "+91 98308 42848",
+    secretary: "Swarup Bhattacharya (Secretary)",
+    secretaryPhone: "+91 98305 24102",
+    address: "BD-7, Deshbandhu Nagar Baguiati Kolkata -700059"
   },
   {
     id: 38,
-    name: "Sarbojonin Srinsri Durgautsav Baguihati Airport Council",
+    name: "SARBOJONIN SRI SRI DURGOTSAV 2016 BAGUIHATI SPORTS COUNCIL",
     entryLat: 22.61331357174024,
     entryLng: 88.42470578849316,
     exitLat: 22.61331357174024,
@@ -714,13 +868,17 @@ export const pujoLocations = [
     parkingLng: null,
     mainPujoLat: 22.61331357174024,
     mainPujoLng: 88.42470578849316,
-    description: "Airport area council organizing grand Durga Puja with community participation and cultural events.",
-    features: ["Airport Area Council", "Community Participation", "Cultural Events"],
-    motto: "Gateway to Celebration",
-    theme: "Airport Area Council",
-    established: "1971",
-    phone: "+91 98765 43248",
-    address: "Baguihati Airport Area, Baguiati - 700159"
+    description: "Sports council organizing grand Durga Puja with community participation and cultural events.",
+    features: ["Sports Council", "Community Participation", "Cultural Events"],
+    motto: "Sports & Celebration",
+    theme: "Sports Council",
+    established: "2016",
+    phone: "+91 98301 13714",
+    contactPerson: "Mihiran Chakrabarty (President)",
+    contactPersonPhone: "+91 98301 13714",
+    secretary: "Deb Kumar Pal (Secretary)",
+    secretaryPhone: "+91 98300 46442",
+    address: "AA-17, Deshbandhu Nagar, Kolkata-700059"
   },
   {
     id: 39,
@@ -738,8 +896,12 @@ export const pujoLocations = [
     motto: "Patriotic Spirit",
     theme: "Subhash Sangha",
     established: "1969",
-    phone: "+91 98765 43249",
-    address: "Baguihati Subhash, Baguiati - 700159"
+    phone: "+91 79806 24384",
+    contactPerson: "Biswaranjan Dasgupta (President)",
+    contactPersonPhone: "+91 79806 24384",
+    secretary: "Swapan Adhikary (Secretary)",
+    secretaryPhone: "+91 98305 04290",
+    address: "Baguiati Subhash Sangha Rabindra Pally, Jyangra"
   },
   {
     id: 40,
@@ -757,8 +919,12 @@ export const pujoLocations = [
     motto: "VIP Experience",
     theme: "Premium Facilities",
     established: "2002",
-    phone: "+91 98765 43250",
-    address: "VIP Garden, Baguiati, Baguiati - 700159"
+    phone: "+91 87777 96009",
+    contactPerson: "Sandip Das (President)",
+    contactPersonPhone: "+91 87777 96009",
+    secretary: "Susmit Chakraborty (Secretary)",
+    secretaryPhone: "+91 98365 80220",
+    address: "AB8/.23/1 Deshbandhunagar, Kolkata-59"
   },
   {
     id: 41,
@@ -776,12 +942,16 @@ export const pujoLocations = [
     motto: "Local Pride",
     theme: "Community Bonding",
     established: "1983",
-    phone: "+91 98765 43251",
-    address: "Apanjan Club, Baguiati, Baguiati - 700159"
+    phone: "+91 98317 58628",
+    contactPerson: "Mihir Ghosh (President)",
+    contactPersonPhone: "+91 98317 58628",
+    secretary: "Bhim Mondal (Secretary)",
+    secretaryPhone: "+91 98833 34710",
+    address: "Arjunpur (Khal Dhar) A.C.Block South, Kol-59"
   },
   {
     id: 42,
-    name: "Vivekananda Balak Samiti",
+    name: "VIVEKANANDA BALAK SAMITY",
     entryLat: 22.6305744,
     entryLng: 88.4337429,
     exitLat: 22.6305744,
@@ -795,8 +965,12 @@ export const pujoLocations = [
     motto: "Education & Values",
     theme: "Educational Values",
     established: "1972",
-    phone: "+91 98765 43252",
-    address: "Vivekananda Balak, Baguiati, Baguiati - 700159"
+    phone: "+91 96811 24758",
+    contactPerson: "Ashok Dutta (President)",
+    contactPersonPhone: "+91 96811 24758",
+    secretary: "Subir Ghosh (Secretary)",
+    secretaryPhone: "+91 98309 52065",
+    address: "Kaikhali (Ramkrishna Pally) Mondal Ganthi, Kolkata 700052"
   },
   {
     id: 43,
@@ -814,8 +988,14 @@ export const pujoLocations = [
     motto: "Luxury & Tradition",
     theme: "Luxury Amenities",
     established: "2003",
-    phone: "+91 98765 43253",
-    address: "Regent Enclave, Baguiati, Baguiati - 700159"
+    phone: "+91 98301 24270",
+    contactPerson: "Indu Joshi (President)",
+    contactPersonPhone: "+91 98301 24270",
+    secretary: "Debaleena Chakrabarti (Secretary)",
+    secretaryPhone: "+91 98303 70478",
+    treasurer: "Bulganin Seikh (Treasurer)",
+    treasurerPhone: "+91 90512 46663",
+    address: "Regent Enclave, Kaikhali, VIP Road, Kol-52"
   },
   {
     id: 44,
@@ -833,12 +1013,16 @@ export const pujoLocations = [
     motto: "Magnum Excellence",
     theme: "Modern Facilities",
     established: "2004",
-    phone: "+91 98765 43254",
-    address: "PS Magnum, Baguiati, Baguiati - 700159"
+    phone: "+91 98364 28882",
+    contactPerson: "Mukesh Agarwal (President)",
+    contactPersonPhone: "+91 98364 28882",
+    secretary: "Saarthak Srimal (Secretary)",
+    secretaryPhone: "+91 98318 28335",
+    address: "PS Magnum, VIP Road, Kaikhali, Kolkata 700052"
   },
   {
     id: 45,
-    name: "Sriramnagar Durga Puja Committee",
+    name: "SRIRAMNAGAR DURGA PUJA COMMITTEE",
     entryLat: 22.628779,
     entryLng: 88.434115,
     exitLat: 22.628779,
@@ -852,12 +1036,16 @@ export const pujoLocations = [
     motto: "Traditional Values",
     theme: "Local Committee",
     established: "1976",
-    phone: "+91 98765 43255",
-    address: "Sriramnagar, Baguiati, Baguiati - 700159"
+    phone: "+91 94330 98511",
+    contactPerson: "Dr. K.V Prasad (President)",
+    contactPersonPhone: "+91 94330 98511",
+    secretary: "Animesh Sengupta (Secretary)",
+    secretaryPhone: "+91 98364 22251",
+    address: "Sriramnagar Residential Complex, VIP Road, Teghoria, Kolkata -52 (Opp. Haldirams)"
   },
   {
     id: 46,
-    name: "Club Town Durgautsav Committee",
+    name: "Club Town Durgotsav Committee",
     entryLat: 22.628754298736997,
     entryLng: 88.43467354774475,
     exitLat: 22.628754298736997,
@@ -871,8 +1059,12 @@ export const pujoLocations = [
     motto: "Club Town Excellence",
     theme: "Premium Facilities",
     established: "2005",
-    phone: "+91 98765 43256",
-    address: "Club Town, Baguiati, Baguiati - 700159"
+    phone: "+91 91372 25092",
+    contactPerson: "Mr. Udaya Lokre (President)",
+    contactPersonPhone: "+91 91372 25092",
+    secretary: "Mr. Subhash Goswami (IPS) (Secretary)",
+    secretaryPhone: "+91 88260 32255",
+    address: "Club Town Housing Complex, VIP Road, Tegharia, (Opposite - Haldiram), Kolkata - 700052"
   },
   {
     id: 47,
@@ -890,8 +1082,12 @@ export const pujoLocations = [
     motto: "Recreation & Fun",
     theme: "Recreational Activities",
     established: "2006",
-    phone: "+91 98765 43257",
-    address: "Shyam Vihar Phase 2, Baguiati, Baguiati - 700159"
+    phone: "+91 62921 96894",
+    contactPerson: "Subhankar Sarkar (President)",
+    contactPersonPhone: "+91 62921 96894",
+    secretary: "Priyankar Roy Choudhury (Secretary)",
+    secretaryPhone: "+91 98363 31464",
+    address: "Shyam Vihar Phase 2, REE-15, Raghunathpur, Kolkata-700059"
   },
   {
     id: 48,
@@ -909,8 +1105,12 @@ export const pujoLocations = [
     motto: "Community First",
     theme: "Community Participation",
     established: "2007",
-    phone: "+91 98765 43258",
-    address: "Podder Vihar, Baguiati, Baguiati - 700159"
+    phone: "+91 98310 78507",
+    contactPerson: "Navnit Daniel Alley (President)",
+    contactPersonPhone: "+91 98310 78507",
+    secretary: "Pravin Sharma (Secretary)",
+    secretaryPhone: "+91 98303 08300",
+    address: "Poddar Vihar 137 VIP Road"
   }
 ];
 
