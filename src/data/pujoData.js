@@ -11,17 +11,21 @@ export const pujoLocations = [
     parkingLng: null,
     mainPujoLat: 22.612406,
     mainPujoLng: 88.427556,
-    description: "Traditional Durga Puja celebration with cultural programs and community participation.",
-    features: ["Cultural Programs", "Community Kitchen", "Traditional Art"],
-    motto: "Unity in Diversity",
-    theme: "Traditional Heritage",
+    description: "রেলপুকুর সার্বজনীন শ্রী শ্রী দুর্গা পূজা সম্মিলনী - বাগুইআটির প্রাচীনতম ও ঐতিহ্যবাহী পূজা কমিটি। ১৯৫২ সাল থেকে এই কমিটি বাঙালি সংস্কৃতির ধারক ও বাহক হিসেবে কাজ করে আসছে। এখানে প্রতিবছর ঐতিহ্যবাহী পূজার পাশাপাশি সাংস্কৃতিক অনুষ্ঠান, রবীন্দ্র সঙ্গীত, নজরুল গীতি, লোকনৃত্য ও নাটকের আয়োজন করা হয়।",
+    bengaliDescription: "রেলপুকুর সার্বজনীন শ্রী শ্রী দুর্গা পূজা সম্মিলনী - বাগুইআটির প্রাচীনতম ও ঐতিহ্যবাহী পূজা কমিটি। ১৯৫২ সাল থেকে এই কমিটি বাঙালি সংস্কৃতির ধারক ও বাহক হিসেবে কাজ করে আসছে। এখানে প্রতিবছর ঐতিহ্যবাহী পূজার পাশাপাশি সাংস্কৃতিক অনুষ্ঠান, রবীন্দ্র সঙ্গীত, নজরুল গীতি, লোকনৃত্য ও নাটকের আয়োজন করা হয়।",
+    features: ["রবীন্দ্র সঙ্গীত", "নজরুল গীতি", "লোকনৃত্য", "নাটক", "ঐতিহ্যবাহী পূজা", "সাম্প্রদায়িক সম্প্রীতি"],
+    motto: "একতাই বল",
+    theme: "ঐতিহ্যবাহী বাঙালি সংস্কৃতি",
     established: "1952",
     phone: "+91 98302 74220",
     contactPerson: "Souren Mukherjee (President)",
     contactPersonPhone: "+91 98302 74220",
     secretary: "Pintu Bhattacharya (Secretary)",
     secretaryPhone: "+91 92313 98840",
-    address: "DA-4 Deshbandhu Nagar Rail Pukur Road Baguihati Kol - 59"
+    address: "DA-4 Deshbandhu Nagar Rail Pukur Road Baguihati Kol - 59",
+    imagePath: "/images/durga-images/durga maa.jpg",
+    culturalSignificance: "এই কমিটি বাগুইআটির প্রথম সার্বজনীন পূজা কমিটি হিসেবে পরিচিত। এখানে প্রতিবছর হাজার হাজার ভক্তের সমাগম হয়।",
+    specialPrograms: ["সন্ধ্যা আরতি", "সাংস্কৃতিক সন্ধ্যা", "প্রসাদ বিতরণ", "সাম্প্রদায়িক ভোজ"]
   },
   {
     id: 2,
@@ -34,17 +38,21 @@ export const pujoLocations = [
     parkingLng: 88.4252213,
     mainPujoLat: null,
     mainPujoLng: null,
-    description: "Community club organizing Durga Puja with modern amenities and cultural events.",
-    features: ["Modern Amenities", "Cultural Events", "Community Hall"],
-    motto: "Together We Celebrate",
-    theme: "Modern Community Spirit",
+    description: "অর্জুনপুর আমরাই সবাই ক্লাব - বাগুইআটির একটি প্রগতিশীল ও আধুনিক কমিউনিটি ক্লাব। ১৯৬৫ সাল থেকে এই ক্লাব যুবসমাজের বিকাশ ও সাংস্কৃতিক কর্মকাণ্ডের কেন্দ্র হিসেবে কাজ করে আসছে। এখানে আধুনিক সুবিধার পাশাপাশি ঐতিহ্যবাহী পূজার আয়োজন করা হয়।",
+    bengaliDescription: "অর্জুনপুর আমরাই সবাই ক্লাব - বাগুইআটির একটি প্রগতিশীল ও আধুনিক কমিউনিটি ক্লাব। ১৯৬৫ সাল থেকে এই ক্লাব যুবসমাজের বিকাশ ও সাংস্কৃতিক কর্মকাণ্ডের কেন্দ্র হিসেবে কাজ করে আসছে। এখানে আধুনিক সুবিধার পাশাপাশি ঐতিহ্যবাহী পূজার আয়োজন করা হয়।",
+    features: ["আধুনিক সুবিধা", "যুব সংগঠন", "সাংস্কৃতিক অনুষ্ঠান", "কমিউনিটি হল", "ক্রীড়া কার্যক্রম", "শিক্ষামূলক কর্মসূচি"],
+    motto: "সবাই মিলে উদযাপন",
+    theme: "আধুনিক কমিউনিটি স্পিরিট",
     established: "1965",
     phone: "+91 94335 23347",
     contactPerson: "Mousumi Naskar Dutta (President)",
     contactPersonPhone: "+91 94335 23347",
     secretary: "Sonali Banerjee (Secretary)",
     secretaryPhone: "+91 82400 44022",
-    address: "NC-15 Arjunpur Taltala Kolkata-700059"
+    address: "NC-15 Arjunpur Taltala Kolkata-700059",
+    imagePath: "/images/durga-images/durga maa 2.jpg",
+    culturalSignificance: "এই ক্লাব যুবসমাজের সৃজনশীলতা ও সাংস্কৃতিক বিকাশের জন্য পরিচিত। এখানে নিয়মিত সাংস্কৃতিক অনুষ্ঠান ও ক্রীড়া প্রতিযোগিতা আয়োজন করা হয়।",
+    specialPrograms: ["যুব উৎসব", "ক্রীড়া প্রতিযোগিতা", "সাংস্কৃতিক সন্ধ্যা", "শিক্ষামূলক সেমিনার"]
   },
   {
     id: 3,
@@ -57,17 +65,21 @@ export const pujoLocations = [
     parkingLng: 88.424114,
     mainPujoLat: null,
     mainPujoLng: null,
-    description: "Memorial organization celebrating Durga Puja with traditional values and modern approach.",
-    features: ["Memorial Services", "Traditional Values", "Modern Approach"],
-    motto: "Brotherhood in Celebration",
-    theme: "Community Harmony",
+    description: "মাস্টারদা স্মৃতি সংঘ - বাগুইআটির একটি স্মৃতিমূলক সংগঠন যা স্বাধীনতা সংগ্রামী মাস্টারদা সূর্য সেনের স্মৃতিকে ধরে রাখার জন্য প্রতিষ্ঠিত। ১৯৬৮ সাল থেকে এই সংঘ সাংস্কৃতিক ঐতিহ্য সংরক্ষণ ও সামাজিক উন্নয়নে কাজ করে আসছে।",
+    bengaliDescription: "মাস্টারদা স্মৃতি সংঘ - বাগুইআটির একটি স্মৃতিমূলক সংগঠন যা স্বাধীনতা সংগ্রামী মাস্টারদা সূর্য সেনের স্মৃতিকে ধরে রাখার জন্য প্রতিষ্ঠিত। ১৯৬৮ সাল থেকে এই সংঘ সাংস্কৃতিক ঐতিহ্য সংরক্ষণ ও সামাজিক উন্নয়নে কাজ করে আসছে।",
+    features: ["স্মৃতিমূলক অনুষ্ঠান", "সাংস্কৃতিক ঐতিহ্য", "সামাজিক সেবা", "শিক্ষামূলক কর্মসূচি", "স্বাধীনতা সংগ্রামী স্মরণ", "সাম্প্রদায়িক সম্প্রীতি"],
+    motto: "অতীতকে স্মরণ করে ভবিষ্যৎ গড়ি",
+    theme: "সাংস্কৃতিক সংরক্ষণ",
     established: "1968",
     phone: "+91 90513 21782",
     contactPerson: "Shampa Chakraborty (President)",
     contactPersonPhone: "+91 90513 21782",
     secretary: "Simul Majumder (Secretary)",
     secretaryPhone: "+91 98312 22229",
-    address: "Prafulla Kanan (West), Kestopur, Kolkata-700101"
+    address: "Prafulla Kanan (West), Kestopur, Kolkata-700101",
+    imagePath: "/images/durga-images/durga maa 3.jpg",
+    culturalSignificance: "এই সংঘ স্বাধীনতা সংগ্রামী মাস্টারদা সূর্য সেনের স্মৃতিকে ধরে রাখার জন্য প্রতিষ্ঠিত। এখানে নিয়মিত স্মৃতিমূলক অনুষ্ঠান ও সাংস্কৃতিক কর্মকাণ্ড আয়োজন করা হয়।",
+    specialPrograms: ["মাস্টারদা স্মরণ দিবস", "স্বাধীনতা সংগ্রামী স্মরণ", "সাংস্কৃতিক অনুষ্ঠান", "সামাজিক সেবা কর্মসূচি"]
   },
   {
     id: 4,
@@ -80,17 +92,21 @@ export const pujoLocations = [
     parkingLng: null,
     mainPujoLat: 22.609994,
     mainPujoLng: 88.432857,
-    description: "Bandhumahal Club's grand Durga Puja celebration with elaborate decorations.",
-    features: ["Elaborate Decorations", "Grand Celebration", "Club Facilities"],
-    motto: "Grand Celebrations",
-    theme: "Elaborate Decorations",
+    description: "অশ্বিনীনগর বন্ধুমহল ক্লাব দুর্গা পূজা কমিটি - বাগুইআটির একটি ঐতিহ্যবাহী ক্লাব যা ১৯৭২ সাল থেকে দুর্গা পূজা উদযাপন করে আসছে। এই ক্লাবের পূজা বিশেষভাবে পরিচিত তাদের জাঁকজমকপূর্ণ সাজসজ্জা ও আড়ম্বরপূর্ণ উদযাপনের জন্য।",
+    bengaliDescription: "অশ্বিনীনগর বন্ধুমহল ক্লাব দুর্গা পূজা কমিটি - বাগুইআটির একটি ঐতিহ্যবাহী ক্লাব যা ১৯৭২ সাল থেকে দুর্গা পূজা উদযাপন করে আসছে। এই ক্লাবের পূজা বিশেষভাবে পরিচিত তাদের জাঁকজমকপূর্ণ সাজসজ্জা ও আড়ম্বরপূর্ণ উদযাপনের জন্য।",
+    features: ["জাঁকজমকপূর্ণ সাজসজ্জা", "আড়ম্বরপূর্ণ উদযাপন", "ক্লাব সুবিধা", "সাংস্কৃতিক অনুষ্ঠান", "সাম্প্রদায়িক ভোজ", "প্রসাদ বিতরণ"],
+    motto: "জাঁকজমকপূর্ণ উদযাপন",
+    theme: "জাঁকজমকপূর্ণ সাজসজ্জা",
     established: "1972",
     phone: "+91 98366 06896",
     contactPerson: "Smt. Piyali Sarkar (President)",
     contactPersonPhone: "+91 98366 06896",
     secretary: "Tapan Bagui (Jt. Secretary)",
     secretaryPhone: "+91 91630 29155",
-    address: "Aswininagar, Hatiara Road, Near Zarda Bagan, Kolkata 700159"
+    address: "Aswininagar, Hatiara Road, Near Zarda Bagan, Kolkata 700159",
+    imagePath: "/images/durga-images/durga maa 4.jpg",
+    culturalSignificance: "এই ক্লাবের পূজা বিশেষভাবে পরিচিত তাদের জাঁকজমকপূর্ণ সাজসজ্জা ও আড়ম্বরপূর্ণ উদযাপনের জন্য। এখানে প্রতিবছর হাজার হাজার ভক্তের সমাগম হয়।",
+    specialPrograms: ["জাঁকজমকপূর্ণ সাজসজ্জা", "সাংস্কৃতিক অনুষ্ঠান", "সাম্প্রদায়িক ভোজ", "প্রসাদ বিতরণ"]
   },
   {
     id: 5,
@@ -103,17 +119,21 @@ export const pujoLocations = [
     parkingLng: null,
     mainPujoLat: 22.631551,
     mainPujoLng: 88.446428,
-    description: "Community-based Durga Puja committee organizing grand celebrations with traditional rituals.",
-    features: ["Traditional Rituals", "Community Based", "Grand Celebrations"],
-    motto: "Community First",
-    theme: "Traditional Rituals",
+    description: "দশদ্রোন সার্বজনীন শ্রী শ্রী দুর্গা পূজা কমিটি - বাগুইআটির একটি ঐতিহ্যবাহী কমিউনিটি ভিত্তিক পূজা কমিটি যা ১৯৬০ সাল থেকে দুর্গা পূজা উদযাপন করে আসছে। এই কমিটি বিশেষভাবে পরিচিত তাদের ঐতিহ্যবাহী আচার-অনুষ্ঠান ও সাম্প্রদায়িক সম্প্রীতির জন্য।",
+    bengaliDescription: "দশদ্রোন সার্বজনীন শ্রী শ্রী দুর্গা পূজা কমিটি - বাগুইআটির একটি ঐতিহ্যবাহী কমিউনিটি ভিত্তিক পূজা কমিটি যা ১৯৬০ সাল থেকে দুর্গা পূজা উদযাপন করে আসছে। এই কমিটি বিশেষভাবে পরিচিত তাদের ঐতিহ্যবাহী আচার-অনুষ্ঠান ও সাম্প্রদায়িক সম্প্রীতির জন্য।",
+    features: ["ঐতিহ্যবাহী আচার-অনুষ্ঠান", "কমিউনিটি ভিত্তিক", "জাঁকজমকপূর্ণ উদযাপন", "সাম্প্রদায়িক সম্প্রীতি", "প্রসাদ বিতরণ", "সাংস্কৃতিক অনুষ্ঠান"],
+    motto: "কমিউনিটি প্রথম",
+    theme: "ঐতিহ্যবাহী আচার-অনুষ্ঠান",
     established: "1960",
     phone: "+91 83370 29877",
     contactPerson: "Santosh Ray (President)",
     contactPersonPhone: "+91 83370 29877",
     secretary: "Chaandan Pradhan (Jt. Secretary)",
     secretaryPhone: "+91 82404 91393",
-    address: "Manicktala Khelar Math, Dashadrone, Rajarhat Road, PS - Baguiati, PO R- Gopalpur, PIN: 700136, West Bengal"
+    address: "Manicktala Khelar Math, Dashadrone, Rajarhat Road, PS - Baguiati, PO R- Gopalpur, PIN: 700136, West Bengal",
+    imagePath: "/images/durga-images/durga maa 5.jpg",
+    culturalSignificance: "এই কমিটি বিশেষভাবে পরিচিত তাদের ঐতিহ্যবাহী আচার-অনুষ্ঠান ও সাম্প্রদায়িক সম্প্রীতির জন্য। এখানে প্রতিবছর হাজার হাজার ভক্তের সমাগম হয়।",
+    specialPrograms: ["ঐতিহ্যবাহী আচার-অনুষ্ঠান", "সাম্প্রদায়িক সম্প্রীতি", "প্রসাদ বিতরণ", "সাংস্কৃতিক অনুষ্ঠান"]
   },
   {
     id: 6,
@@ -136,7 +156,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98300 56986",
     secretary: "Ruman Chanda (Secretary)",
     secretaryPhone: "+91 98308 62255",
-    address: "Prafulla Kanan (West), Kestopur, Kol-700101"
+    address: "Prafulla Kanan (West), Kestopur, Kol-700101",
+    imagePath: "/images/durga-images/durga maa 6.jpg"
   },
   {
     id: 7,
@@ -159,7 +180,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 99034 63836",
     secretary: "Kaushik Banerjee (Jt. Secretary)",
     secretaryPhone: "+91 98310 21633",
-    address: "Sachindra Lal Sarani, Joramandir, Baguiati, Joramondir"
+    address: "Sachindra Lal Sarani, Joramandir, Baguiati, Joramondir",
+    imagePath: "/images/durga-images/durga maa 7.jpg"
   },
   {
     id: 8,
@@ -182,7 +204,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 84201 5726",
     secretary: "Nilendu Ch. Chaudhury (Secretary)",
     secretaryPhone: "+91 98307 85400",
-    address: "Prafulla Kanan Krishnapur, Kol- 101"
+    address: "Prafulla Kanan Krishnapur, Kol- 101",
+    imagePath: "/images/durga-images/durga maa 8.jpg"
   },
   {
     id: 9,
@@ -205,7 +228,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98314 47453",
     secretary: "Kamal Naskar (Secretary)",
     secretaryPhone: "+91 93301 12513",
-    address: "Jyangra Raghunathpur VIP Road"
+    address: "Jyangra Raghunathpur VIP Road",
+    imagePath: "/images/durga-images/puja pandle 4.jpg"
   },
   {
     id: 10,
@@ -228,7 +252,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 94331 42088",
     secretary: "Aloka Sanyal (Secretary)",
     secretaryPhone: "+91 98307 74097",
-    address: "Tegharia, Lichubagan, Near Marble Rock, Kolkata - 700059"
+    address: "Tegharia, Lichubagan, Near Marble Rock, Kolkata - 700059",
+    imagePath: "/images/durga-images/puja pandle 5.jpg"
   },
   {
     id: 11,

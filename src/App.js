@@ -13,10 +13,6 @@ function App() {
     <Router>
       <div className="App">
         <SoundEffects />
-        <header className="app-header">
-          <h1>🎭 দুর্গা পূজা ট্যুরিজম | Durga Puja Tourism</h1>
-          <p>বাগুইআটির মহিমান্বিত প্যান্ডেলগুলি অন্বেষণ করুন | Explore the magnificent pandals of Baguiati</p>
-        </header>
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/map" element={<MapView />} />

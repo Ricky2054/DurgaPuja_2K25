@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import L from 'leaflet';
 import { pujoLocations } from '../data/pujoData';
@@ -22,6 +22,9 @@ const MapView = () => {
   const [nearbyPandals, setNearbyPandals] = useState([]);
   const [isLocating, setIsLocating] = useState(false);
   const [locationError, setLocationError] = useState(null);
+  const [selectedPandal, setSelectedPandal] = useState(null);
+  const [showDirections, setShowDirections] = useState(false);
+  const [directionsInfo, setDirectionsInfo] = useState(null);
 
   const handleBackClick = () => {
     if (window.playDurgaSound) {
@@ -71,6 +74,43 @@ const MapView = () => {
       window.playDurgaSound('bell');
     }
     navigate(`/pandal-page/${pujoId}`);
+  };
+
+  const handleGetDirections = (pandal) => {
+    if (!userLocation) {
+      alert('Please enable location access first to get directions.');
+      return;
+    }
+
+    setSelectedPandal(pandal);
+    setShowDirections(true);
+    
+    // Calculate distance and estimated time
+    const distance = calculateDistance(
+      userLocation.lat,
+      userLocation.lng,
+      pandal.entryLat,
+      pandal.entryLng
+    );
+    
+    // Estimate travel time (assuming average speed of 20 km/h in city traffic)
+    const estimatedTime = Math.round((distance / 20) * 60); // in minutes
+    
+    setDirectionsInfo({
+      distance: distance,
+      estimatedTime: estimatedTime,
+      pandal: pandal
+    });
+
+    // Open Google Maps with directions
+    const googleMapsUrl = `https://www.google.com/maps/dir/${userLocation.lat},${userLocation.lng}/${pandal.entryLat},${pandal.entryLng}`;
+    window.open(googleMapsUrl, '_blank');
+  };
+
+  const closeDirections = () => {
+    setShowDirections(false);
+    setSelectedPandal(null);
+    setDirectionsInfo(null);
   };
 
   // Function to calculate distance between two points
@@ -314,16 +354,31 @@ const MapView = () => {
               click: () => handleMarkerClick(pujo.id)
             }}
           >
+            <Tooltip direction="top" offset={[0, -10]} opacity={1}>
+              <div style={{ 
+                background: 'rgba(0, 0, 0, 0.8)', 
+                color: 'white', 
+                padding: '8px 12px', 
+                borderRadius: '8px',
+                fontSize: '12px',
+                fontWeight: '600',
+                textAlign: 'center',
+                minWidth: '120px'
+              }}>
+                <div style={{ fontSize: '14px', marginBottom: '4px' }}>#{pujo.id}</div>
+                <div style={{ fontSize: '11px', opacity: 0.9 }}>{pujo.name}</div>
+              </div>
+            </Tooltip>
             <Popup>
-              <div style={{ textAlign: 'center', padding: '10px' }}>
+              <div style={{ textAlign: 'center', padding: '10px', minWidth: '250px' }}>
                 <h3 style={{ color: '#2c3e50', marginBottom: '10px', fontSize: '16px' }}>
                   {pujo.name}
                 </h3>
                 <p style={{ color: '#7f8c8d', marginBottom: '15px', fontSize: '14px' }}>
                   {pujo.description}
                 </p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', justifyContent: 'center' }}>
-                  {pujo.features.map((feature, idx) => (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', justifyContent: 'center', marginBottom: '15px' }}>
+                  {pujo.features.slice(0, 3).map((feature, idx) => (
                     <span
                       key={idx}
                       style={{
@@ -338,31 +393,86 @@ const MapView = () => {
                       {feature}
                     </span>
                   ))}
+                  {pujo.features.length > 3 && (
+                    <span style={{
+                      background: 'rgba(0, 0, 0, 0.2)',
+                      color: '#7f8c8d',
+                      padding: '4px 8px',
+                      borderRadius: '12px',
+                      fontSize: '12px',
+                      fontWeight: '500'
+                    }}>
+                      +{pujo.features.length - 3} more
+                    </span>
+                  )}
                 </div>
-                <button
-                  onClick={() => handleMarkerClick(pujo.id)}
-                  style={{
-                    background: '#3498db',
-                    color: 'white',
-                    border: 'none',
-                    padding: '8px 16px',
-                    borderRadius: '20px',
-                    fontSize: '14px',
-                    cursor: 'pointer',
-                    marginTop: '10px',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onMouseOver={(e) => {
-                    e.target.style.background = '#2980b9';
-                    e.target.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.target.style.background = '#3498db';
-                    e.target.style.transform = 'translateY(0)';
-                  }}
-                >
-                  View Details & Traffic
-                </button>
+                <div style={{ marginBottom: '15px' }}>
+                  <p style={{ color: '#95a5a5', fontSize: '12px', margin: '5px 0' }}>
+                    📍 {pujo.address}
+                  </p>
+                  {userLocation && (
+                    <p style={{ color: '#27ae60', fontSize: '12px', margin: '5px 0', fontWeight: '600' }}>
+                      📏 {calculateDistance(userLocation.lat, userLocation.lng, pujo.entryLat, pujo.entryLng).toFixed(1)} km away
+                    </p>
+                  )}
+                </div>
+                <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+                  <button
+                    onClick={() => handleMarkerClick(pujo.id)}
+                    style={{
+                      background: '#3498db',
+                      color: 'white',
+                      border: 'none',
+                      padding: '8px 16px',
+                      borderRadius: '20px',
+                      fontSize: '12px',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      flex: 1
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.background = '#2980b9';
+                      e.target.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.background = '#3498db';
+                      e.target.style.transform = 'translateY(0)';
+                    }}
+                  >
+                    View Details
+                  </button>
+                  {userLocation && (
+                    <button
+                      onClick={() => handleGetDirections(pujo)}
+                      style={{
+                        background: '#e74c3c',
+                        color: 'white',
+                        border: 'none',
+                        padding: '8px 16px',
+                        borderRadius: '20px',
+                        fontSize: '12px',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        flex: 1
+                      }}
+                      onMouseOver={(e) => {
+                        e.target.style.background = '#c0392b';
+                        e.target.style.transform = 'translateY(-2px)';
+                      }}
+                      onMouseOut={(e) => {
+                        e.target.style.background = '#e74c3c';
+                        e.target.style.transform = 'translateY(0)';
+                      }}
+                    >
+                      Get Directions
+                    </button>
+                  )}
+                </div>
+                {!userLocation && (
+                  <p style={{ color: '#e67e22', fontSize: '11px', marginTop: '10px', fontStyle: 'italic' }}>
+                    Enable location to get directions
+                  </p>
+                )}
               </div>
             </Popup>
           </Marker>
@@ -536,34 +646,65 @@ const MapView = () => {
                   📍 {pandal.address}
                 </p>
                 
-                {/* View Details Button */}
-                <button
-                  style={{
-                    background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '20px',
-                    padding: '0.8rem 1.5rem',
-                    fontSize: '0.9rem',
-                    fontWeight: '600',
-                    cursor: 'pointer',
-                    width: '100%',
-                    transition: 'all 0.3s ease',
-                    boxShadow: '0 4px 15px rgba(52, 152, 219, 0.3)'
-                  }}
-                  onMouseOver={(e) => {
-                    e.target.style.background = 'linear-gradient(135deg, #2980b9 0%, #1f5f8b 100%)';
-                    e.target.style.transform = 'translateY(-2px)';
-                    e.target.style.boxShadow = '0 6px 20px rgba(52, 152, 219, 0.4)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.target.style.background = 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)';
-                    e.target.style.transform = 'translateY(0)';
-                    e.target.style.boxShadow = '0 4px 15px rgba(52, 152, 219, 0.3)';
-                  }}
-                >
-                  View Details & Traffic Flow
-                </button>
+                {/* Action Buttons */}
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <button
+                    onClick={() => handleMarkerClick(pandal.id)}
+                    style={{
+                      background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '20px',
+                      padding: '0.8rem 1rem',
+                      fontSize: '0.8rem',
+                      fontWeight: '600',
+                      cursor: 'pointer',
+                      flex: 1,
+                      transition: 'all 0.3s ease',
+                      boxShadow: '0 4px 15px rgba(52, 152, 219, 0.3)'
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.background = 'linear-gradient(135deg, #2980b9 0%, #1f5f8b 100%)';
+                      e.target.style.transform = 'translateY(-2px)';
+                      e.target.style.boxShadow = '0 6px 20px rgba(52, 152, 219, 0.4)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.background = 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)';
+                      e.target.style.transform = 'translateY(0)';
+                      e.target.style.boxShadow = '0 4px 15px rgba(52, 152, 219, 0.3)';
+                    }}
+                  >
+                    View Details
+                  </button>
+                  <button
+                    onClick={() => handleGetDirections(pandal)}
+                    style={{
+                      background: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '20px',
+                      padding: '0.8rem 1rem',
+                      fontSize: '0.8rem',
+                      fontWeight: '600',
+                      cursor: 'pointer',
+                      flex: 1,
+                      transition: 'all 0.3s ease',
+                      boxShadow: '0 4px 15px rgba(231, 76, 60, 0.3)'
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.background = 'linear-gradient(135deg, #c0392b 0%, #a93226 100%)';
+                      e.target.style.transform = 'translateY(-2px)';
+                      e.target.style.boxShadow = '0 6px 20px rgba(231, 76, 60, 0.4)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)';
+                      e.target.style.transform = 'translateY(0)';
+                      e.target.style.boxShadow = '0 4px 15px rgba(231, 76, 60, 0.3)';
+                    }}
+                  >
+                    Get Directions
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -580,6 +721,198 @@ const MapView = () => {
               </p>
             </div>
           )}
+        </div>
+      )}
+
+      {/* Directions Modal */}
+      {showDirections && directionsInfo && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0, 0, 0, 0.8)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10000,
+          padding: '2rem'
+        }}>
+          <div style={{
+            background: 'white',
+            borderRadius: '20px',
+            padding: '2rem',
+            maxWidth: '500px',
+            width: '100%',
+            maxHeight: '80vh',
+            overflow: 'auto',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+            position: 'relative'
+          }}>
+            {/* Close Button */}
+            <button
+              onClick={closeDirections}
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                background: '#e74c3c',
+                color: 'white',
+                border: 'none',
+                borderRadius: '50%',
+                width: '40px',
+                height: '40px',
+                fontSize: '20px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.background = '#c0392b';
+                e.target.style.transform = 'scale(1.1)';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.background = '#e74c3c';
+                e.target.style.transform = 'scale(1)';
+              }}
+            >
+              ×
+            </button>
+
+            {/* Directions Content */}
+            <div style={{ textAlign: 'center' }}>
+              <h2 style={{ 
+                color: '#2c3e50', 
+                marginBottom: '1rem',
+                fontSize: '1.5rem'
+              }}>
+                🗺️ Directions to {directionsInfo.pandal.name}
+              </h2>
+              
+              <div style={{
+                background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
+                color: 'white',
+                padding: '1.5rem',
+                borderRadius: '15px',
+                marginBottom: '1.5rem'
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '1rem' }}>
+                  <div style={{ textAlign: 'center' }}>
+                    <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📏</div>
+                    <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>
+                      {directionsInfo.distance.toFixed(1)} km
+                    </div>
+                    <div style={{ fontSize: '0.9rem', opacity: 0.9 }}>Distance</div>
+                  </div>
+                  <div style={{ textAlign: 'center' }}>
+                    <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>⏱️</div>
+                    <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>
+                      {directionsInfo.estimatedTime} min
+                    </div>
+                    <div style={{ fontSize: '0.9rem', opacity: 0.9 }}>Est. Time</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{
+                background: '#f8f9fa',
+                padding: '1rem',
+                borderRadius: '10px',
+                marginBottom: '1.5rem',
+                textAlign: 'left'
+              }}>
+                <h3 style={{ color: '#2c3e50', marginBottom: '0.5rem' }}>📍 Destination Details:</h3>
+                <p style={{ color: '#7f8c8d', marginBottom: '0.5rem' }}>
+                  <strong>Name:</strong> {directionsInfo.pandal.name}
+                </p>
+                <p style={{ color: '#7f8c8d', marginBottom: '0.5rem' }}>
+                  <strong>Address:</strong> {directionsInfo.pandal.address}
+                </p>
+                <p style={{ color: '#7f8c8d' }}>
+                  <strong>Features:</strong> {directionsInfo.pandal.features.slice(0, 3).join(', ')}
+                  {directionsInfo.pandal.features.length > 3 && ` +${directionsInfo.pandal.features.length - 3} more`}
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+                <button
+                  onClick={() => {
+                    const googleMapsUrl = `https://www.google.com/maps/dir/${userLocation.lat},${userLocation.lng}/${directionsInfo.pandal.entryLat},${directionsInfo.pandal.entryLng}`;
+                    window.open(googleMapsUrl, '_blank');
+                  }}
+                  style={{
+                    background: 'linear-gradient(135deg, #27ae60 0%, #229954 100%)',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '25px',
+                    padding: '1rem 2rem',
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    boxShadow: '0 4px 15px rgba(39, 174, 96, 0.3)'
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.background = 'linear-gradient(135deg, #229954 0%, #1e8449 100%)';
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.boxShadow = '0 6px 20px rgba(39, 174, 96, 0.4)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.background = 'linear-gradient(135deg, #27ae60 0%, #229954 100%)';
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 4px 15px rgba(39, 174, 96, 0.3)';
+                  }}
+                >
+                  🗺️ Open in Google Maps
+                </button>
+                <button
+                  onClick={() => handleMarkerClick(directionsInfo.pandal.id)}
+                  style={{
+                    background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '25px',
+                    padding: '1rem 2rem',
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    boxShadow: '0 4px 15px rgba(52, 152, 219, 0.3)'
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.background = 'linear-gradient(135deg, #2980b9 0%, #1f5f8b 100%)';
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.boxShadow = '0 6px 20px rgba(52, 152, 219, 0.4)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.background = 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)';
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 4px 15px rgba(52, 152, 219, 0.3)';
+                  }}
+                >
+                  📋 View Details
+                </button>
+              </div>
+
+              <p style={{ 
+                color: '#95a5a5', 
+                fontSize: '0.9rem', 
+                marginTop: '1rem',
+                fontStyle: 'italic'
+              }}>
+                Google Maps will open in a new tab with turn-by-turn directions
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </div>

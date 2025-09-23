@@ -87,8 +87,22 @@ const PandalPage = () => {
         <div className="header-background"></div>
         <div className="header-content">
           <h1 className="pandal-title">{pandal.name}</h1>
-          <p className="pandal-motto">{pandal.motto || "Community Celebration"}</p>
-          <p className="pandal-details">Established {pandal.established || "1970"} • {pandal.theme || "Community Spirit"}</p>
+          <p className="pandal-motto bengali-motto">{pandal.motto || "Community Celebration"}</p>
+          <p className="pandal-details">Established {pandal.established || "1970"} • <span className="bengali-theme">{pandal.theme || "Community Spirit"}</span></p>
+          
+          {/* Pandal Image */}
+          {pandal.imagePath && (
+            <div className="pandal-image-container">
+              <img 
+                src={pandal.imagePath} 
+                alt={pandal.name}
+                className="pandal-main-image"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                }}
+              />
+            </div>
+          )}
           
           <div className="action-buttons">
             <button className="btn btn-primary" onClick={handleGetDirections}>
@@ -124,9 +138,32 @@ const PandalPage = () => {
           {/* About Card */}
           <div className="info-card">
             <h3 className="card-title">About the Committee</h3>
-            <p className="card-description">
-              {pandal.description || "Fostering community bonds through grand celebrations and cultural programs that bring everyone together."}
+            <p className="card-description bengali-description">
+              {pandal.bengaliDescription || pandal.description || "Fostering community bonds through grand celebrations and cultural programs that bring everyone together."}
             </p>
+            
+            {/* Cultural Significance */}
+            {pandal.culturalSignificance && (
+              <div className="cultural-significance">
+                <h4 className="significance-title">Cultural Significance</h4>
+                <p className="bengali-significance">{pandal.culturalSignificance}</p>
+              </div>
+            )}
+            
+            {/* Features */}
+            {pandal.features && pandal.features.length > 0 && (
+              <div className="features-section">
+                <h4 className="features-title">Key Features</h4>
+                <div className="features-grid">
+                  {pandal.features.map((feature, index) => (
+                    <span key={index} className="feature-tag bengali-features">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+            
             <div className="info-items">
               <div className="info-item">
                 <span className="info-icon">📅</span>
@@ -134,7 +171,7 @@ const PandalPage = () => {
               </div>
               <div className="info-item">
                 <span className="info-icon">❤️</span>
-                <span>Theme: {pandal.theme || "Community Spirit"}</span>
+                <span>Theme: <span className="bengali-theme">{pandal.theme || "Community Spirit"}</span></span>
               </div>
               <div className="info-item">
                 <span className="info-icon">📍</span>
@@ -263,6 +300,21 @@ const PandalPage = () => {
               </div>
             </div>
           </div>
+
+          {/* Special Programs Card */}
+          {pandal.specialPrograms && pandal.specialPrograms.length > 0 && (
+            <div className="info-card">
+              <h3 className="card-title">Special Programs</h3>
+              <div className="programs-grid">
+                {pandal.specialPrograms.map((program, index) => (
+                  <div key={index} className="program-item">
+                    <span className="program-icon">🎭</span>
+                    <span className="program-name bengali-programs">{program}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
