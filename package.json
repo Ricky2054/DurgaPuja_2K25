@@ -2,6 +2,7 @@
   "name": "durga-puja-tourism",
   "version": "1.0.0",
   "description": "Durga Puja Pandal Tourism Website with Interactive Map and Traffic Animation",
+  "homepage": "./",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",

@@ -95,6 +95,29 @@ You can easily customize:
 - **Pandal Data**: Add or modify pandal information in the data file
 - **Animation Speed**: Adjust car speeds in `TrafficAnimation.js`
 
+## 🚀 Deployment
+
+### Vercel Deployment
+
+This project is optimized for deployment on Vercel:
+
+1. **Deploy via GitHub**:
+   - Connect your GitHub repository to Vercel
+   - Vercel will automatically detect the React app and configure build settings
+
+2. **Manual Deployment**:
+   ```bash
+   npm install -g vercel
+   vercel --prod
+   ```
+
+3. **Build Settings**:
+   - Build Command: `npm run build`
+   - Output Directory: `build`
+   - Framework: Create React App
+
+The `vercel.json` configuration file is included for optimal deployment with proper routing for the React Router and static asset caching.
+
 ## 📝 License
 
 This project is created for educational and demonstration purposes.
