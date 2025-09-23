@@ -276,7 +276,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98319 35899",
     secretary: "Swagata Sengupta (Secretary)",
     secretaryPhone: "+91 98307 40255",
-    address: "VIP Enclave VIP Road Baguihati Kolkata 700059"
+    address: "VIP Enclave VIP Road Baguihati Kolkata 700059",
+    imagePath: "/images/durga-images/durga maa 9.jpg"
   },
   {
     id: 12,
@@ -299,7 +300,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 70011 09329",
     secretary: "Sourav Baheti (Secretary)",
     secretaryPhone: "+91 98312 22290",
-    address: "Regent Court, Raghunathpur, Kolkata-700059"
+    address: "Regent Court, Raghunathpur, Kolkata-700059",
+    imagePath: "/images/durga-images/durga maa 10.jpg"
   },
   {
     id: 13,
@@ -322,7 +324,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98302 79477",
     secretary: "Dipendra Nath Hazra (Secretary)",
     secretaryPhone: "+91 98302 10082",
-    address: "RAA-27, Raghunathpur, Raghunathpur East, Kolkata-700059"
+    address: "RAA-27, Raghunathpur, Raghunathpur East, Kolkata-700059",
+    imagePath: "/images/durga-images/durga maa 11.jpg"
   },
   {
     id: 14,
@@ -345,7 +348,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 80174 71350",
     secretary: "Atanu Sinha (Secretary)",
     secretaryPhone: "+91 98046 91688",
-    address: "DD/13 DB Nagar, Saha Para Baguiati, Kolkata 700059"
+    address: "DD/13 DB Nagar, Saha Para Baguiati, Kolkata 700059",
+    imagePath: "/images/durga-images/puja pandle 6.jpg"
   },
   {
     id: 15,
@@ -368,7 +372,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98307 02406",
     secretary: "Utshab Ghosh (Secretary)",
     secretaryPhone: "+91 82405 29820",
-    address: "V.I.P Road, Nazrul Park, Kolkata-700159"
+    address: "V.I.P Road, Nazrul Park, Kolkata-700159",
+    imagePath: "/images/durga-images/puja pandle 7.jpg"
   },
   {
     id: 16,
@@ -391,7 +396,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98300 20056",
     secretary: "Sunit Kundu (Secretary)",
     secretaryPhone: "+91 62903 24490",
-    address: "GB-50, Narayantala West, Kolkata-700059"
+    address: "GB-50, Narayantala West, Kolkata-700059",
+    imagePath: "/images/durga-images/puja pandle 8.jpg"
   },
   {
     id: 17,
@@ -416,7 +422,8 @@ export const pujoLocations = [
     secretaryPhone: "+91 98316 44382",
     viceSecretary: "Mihir Ghose (Vice Secretary)",
     viceSecretaryPhone: "+91 93307 77757",
-    address: "DC-2/13, Shastribagan, Baguihati, Joramandir, Kolkata-700059"
+    address: "DC-2/13, Shastribagan, Baguihati, Joramandir, Kolkata-700059",
+    imagePath: "/images/durga-images/puja pandle 9.jpg"
   },
   {
     id: 18,
@@ -439,7 +446,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 62909 67912",
     secretary: "Sujit Mondal (Secretary)",
     secretaryPhone: "+91 98300 22397",
-    address: "Jyangra Bottala, Hatiara Main Road, Kolkata - 59"
+    address: "Jyangra Bottala, Hatiara Main Road, Kolkata - 59",
+    imagePath: "/images/durga-images/puja pandle 10.jpg"
   },
   {
     id: 19,
@@ -462,7 +470,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98360 65329",
     secretary: "Abhisake Das (Secretary)",
     secretaryPhone: "+91 98046 08548",
-    address: "Jyangra Dakshin Math Adhibasibrinda, Baguiati, Kolkata 700059"
+    address: "Jyangra Dakshin Math Adhibasibrinda, Baguiati, Kolkata 700059",
+    imagePath: "/images/durga-images/traditional puja.jpg"
   },
   {
     id: 20,
@@ -485,7 +494,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 90516 44849",
     secretary: "Sanjit Mondal (Secretary)",
     secretaryPhone: "+91 62906 14760",
-    address: "Shib Sankar Pally, PO: Aswininagar, PS: Baguiati, Kolkata-700159"
+    address: "Shib Sankar Pally, PO: Aswininagar, PS: Baguiati, Kolkata-700159",
+    imagePath: "/images/durga-images/pandle pic.jpg"
   },
   {
     id: 21,
@@ -508,7 +518,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98744 52436",
     secretary: "Sanjukta Kar (Secretary)",
     secretaryPhone: "+91 98307 79470",
-    address: "Naba Balak Sangha Prangan, Jhawtala Road Kolkata -700157"
+    address: "Naba Balak Sangha Prangan, Jhawtala Road Kolkata -700157",
+    imagePath: "/images/durga-images/durga maa.jpg"
   },
   {
     id: 22,
@@ -533,7 +544,8 @@ export const pujoLocations = [
     secretaryPhone: "+91 70445 61696",
     treasurer: "Partha Sarathi Dutta (Treasurer)",
     treasurerPhone: "+91 98302 02111",
-    address: "Gobinda Nibas, Khelar Math, Kolkata - 59"
+    address: "Gobinda Nibas, Khelar Math, Kolkata - 59",
+    imagePath: "/images/durga-images/durga maa 2.jpg"
   },
   {
     id: 23,
@@ -556,7 +568,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98360 24869",
     secretary: "Rahul Mondal (Secretary)",
     secretaryPhone: "+91 98753 56025",
-    address: "Jyangra 4 No. Colony, Kolkata-700059"
+    address: "Jyangra 4 No. Colony, Kolkata-700059",
+    imagePath: "/images/durga-images/durga maa 4.jpg"
   },
   {
     id: 24,
@@ -581,7 +594,8 @@ export const pujoLocations = [
     secretaryPhone: "+91 90735 06968",
     jointSecretary: "Sujit Hira (Jt. Secretary)",
     jointSecretaryPhone: "+91 90735 06968",
-    address: "Aswininagar, Near Foira Bawan, Kolkata 700159"
+    address: "Aswininagar, Near Foira Bawan, Kolkata 700159",
+    imagePath: "/images/durga-images/durga maa 3.jpg"
   },
   {
     id: 25,
@@ -604,7 +618,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 84205 62207",
     secretary: "Ajay Naskar (Jt. Secretary)",
     secretaryPhone: "+91 91630 05497",
-    address: "Jagat Pur, Ward No 23, PO Gouranga Nagar PS Baguiati, Kol 700162"
+    address: "Jagat Pur, Ward No 23, PO Gouranga Nagar PS Baguiati, Kol 700162",
+    imagePath: "/images/durga-images/durga maa 5.jpg"
   },
   {
     id: 26,
@@ -627,7 +642,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98315 11482",
     secretary: "Animesh Mistry (Secretary)",
     secretaryPhone: "+91 70033 20097",
-    address: "Udayan Pally, Aswininagar, Kol-700159"
+    address: "Udayan Pally, Aswininagar, Kol-700159",
+    imagePath: "/images/durga-images/durga maa 6.jpg"
   },
   {
     id: 27,
@@ -650,7 +666,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 90517 25222",
     secretary: "Subhash Chandra Roy (Secretary)",
     secretaryPhone: "+91 94330 47350",
-    address: "77CC/2, Anupama Housing Complex, Phase-II VIP Road, Near Haldiram Food, Kolkata-700052"
+    address: "77CC/2, Anupama Housing Complex, Phase-II VIP Road, Near Haldiram Food, Kolkata-700052",
+    imagePath: "/images/durga-images/durga maa 7.jpg"
   },
   {
     id: 28,
@@ -673,7 +690,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98312 78878",
     secretary: "Rakesh Shaw (Secretary)",
     secretaryPhone: "+91 98305 55873",
-    address: "Chinar Park, P.O: Hatiara, Kolkata-700157"
+    address: "Chinar Park, P.O: Hatiara, Kolkata-700157",
+    imagePath: "/images/durga-images/durga maa 8.jpg"
   },
   {
     id: 29,
@@ -696,7 +714,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98744 52436",
     secretary: "Sanjukta Kar (Secretary)",
     secretaryPhone: "+91 98307 79470",
-    address: "Naba Balak Sangha Prangan, Jhawtala Road Kolkata -700157"
+    address: "Naba Balak Sangha Prangan, Jhawtala Road Kolkata -700157",
+    imagePath: "/images/durga-images/durga maa 2.jpg"
   },
   {
     id: 30,
@@ -719,7 +738,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98308 90996",
     secretary: "Kishan Khaitan (Secretary)",
     secretaryPhone: "+91 90079 53333",
-    address: "137 V.I.P. Road"
+    address: "137 V.I.P. Road",
+    imagePath: "/images/durga-images/durga maa 10.jpg"
   },
   {
     id: 31,
@@ -742,7 +762,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 83360 38043",
     secretary: "Narendra Kumar Sharma (Secretary)",
     secretaryPhone: "+91 98310 02323",
-    address: "137, VIP Road"
+    address: "137, VIP Road",
+    imagePath: "/images/durga-images/durga maa 11.jpg"
   },
   {
     id: 32,
@@ -765,7 +786,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 74398 05525",
     secretary: "Psamadrita Niyogo (Secretary)",
     secretaryPhone: "+91 70449 92820",
-    address: "VIP Road Kaikhali"
+    address: "VIP Road Kaikhali",
+    imagePath: "/images/durga-images/puja pandle 1.jpg"
   },
   {
     id: 33,
@@ -788,7 +810,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98319 23040",
     secretary: "Sharmista Raha (Secretary)",
     secretaryPhone: "+91 98311 25178",
-    address: "Space Town Housing Complex V.I.P. Road Kolkata - 700052"
+    address: "Space Town Housing Complex V.I.P. Road Kolkata - 700052",
+    imagePath: "/images/durga-images/puja pandle 2.jpg"
   },
   {
     id: 34,
@@ -811,7 +834,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 90735 88937",
     secretary: "Swati Ghosh (Secretary)",
     secretaryPhone: "+91 62917 49983",
-    address: "Anupama Housing Complex, Community Centre, VIP Road, Kolkata - 700052"
+    address: "Anupama Housing Complex, Community Centre, VIP Road, Kolkata - 700052",
+    imagePath: "/images/durga-images/puja pandle 3.jpeg"
   },
   {
     id: 35,
@@ -834,7 +858,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98301 48610",
     secretary: "Arup Kr. Thakur (Secretary)",
     secretaryPhone: "+91 80177 33085",
-    address: "Koyla Vihar Vasundhara, VIP Road, Kolkata-700052"
+    address: "Koyla Vihar Vasundhara, VIP Road, Kolkata-700052",
+    imagePath: "/images/durga-images/puja pandle 4.jpg"
   },
   {
     id: 36,
@@ -857,7 +882,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98304 16599",
     secretary: "Sumit Roy (Secretary)",
     secretaryPhone: "+91 98740 61952",
-    address: "AA-8/4 D B Nagar Baguiat Deshbandhu Nagar Kol 59"
+    address: "AA-8/4 D B Nagar Baguiat Deshbandhu Nagar Kol 59",
+    imagePath: "/images/durga-images/puja pandle 5.jpg"
   },
   {
     id: 37,
@@ -880,7 +906,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98308 42848",
     secretary: "Swarup Bhattacharya (Secretary)",
     secretaryPhone: "+91 98305 24102",
-    address: "BD-7, Deshbandhu Nagar Baguiati Kolkata -700059"
+    address: "BD-7, Deshbandhu Nagar Baguiati Kolkata -700059",
+    imagePath: "/images/durga-images/puja pandle 6.jpg"
   },
   {
     id: 38,
@@ -903,7 +930,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98301 13714",
     secretary: "Deb Kumar Pal (Secretary)",
     secretaryPhone: "+91 98300 46442",
-    address: "AA-17, Deshbandhu Nagar, Kolkata-700059"
+    address: "AA-17, Deshbandhu Nagar, Kolkata-700059",
+    imagePath: "/images/durga-images/puja pandle 7.jpg"
   },
   {
     id: 39,
@@ -926,7 +954,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 79806 24384",
     secretary: "Swapan Adhikary (Secretary)",
     secretaryPhone: "+91 98305 04290",
-    address: "Baguiati Subhash Sangha Rabindra Pally, Jyangra"
+    address: "Baguiati Subhash Sangha Rabindra Pally, Jyangra",
+    imagePath: "/images/durga-images/puja pandle 8.jpg"
   },
   {
     id: 40,
@@ -949,7 +978,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 87777 96009",
     secretary: "Susmit Chakraborty (Secretary)",
     secretaryPhone: "+91 98365 80220",
-    address: "AB8/.23/1 Deshbandhunagar, Kolkata-59"
+    address: "AB8/.23/1 Deshbandhunagar, Kolkata-59",
+    imagePath: "/images/durga-images/puja pandle 9.jpg"
   },
   {
     id: 41,
@@ -972,7 +1002,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98317 58628",
     secretary: "Bhim Mondal (Secretary)",
     secretaryPhone: "+91 98833 34710",
-    address: "Arjunpur (Khal Dhar) A.C.Block South, Kol-59"
+    address: "Arjunpur (Khal Dhar) A.C.Block South, Kol-59",
+    imagePath: "/images/durga-images/puja pandle 10.jpg"
   },
   {
     id: 42,
@@ -995,7 +1026,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 96811 24758",
     secretary: "Subir Ghosh (Secretary)",
     secretaryPhone: "+91 98309 52065",
-    address: "Kaikhali (Ramkrishna Pally) Mondal Ganthi, Kolkata 700052"
+    address: "Kaikhali (Ramkrishna Pally) Mondal Ganthi, Kolkata 700052",
+    imagePath: "/images/durga-images/traditional puja.jpg"
   },
   {
     id: 43,
@@ -1020,7 +1052,8 @@ export const pujoLocations = [
     secretaryPhone: "+91 98303 70478",
     treasurer: "Bulganin Seikh (Treasurer)",
     treasurerPhone: "+91 90512 46663",
-    address: "Regent Enclave, Kaikhali, VIP Road, Kol-52"
+    address: "Regent Enclave, Kaikhali, VIP Road, Kol-52",
+    imagePath: "/images/durga-images/pandle pic.jpg"
   },
   {
     id: 44,
@@ -1043,7 +1076,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98364 28882",
     secretary: "Saarthak Srimal (Secretary)",
     secretaryPhone: "+91 98318 28335",
-    address: "PS Magnum, VIP Road, Kaikhali, Kolkata 700052"
+    address: "PS Magnum, VIP Road, Kaikhali, Kolkata 700052",
+    imagePath: "/images/durga-images/durga maa.jpg"
   },
   {
     id: 45,
@@ -1066,7 +1100,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 94330 98511",
     secretary: "Animesh Sengupta (Secretary)",
     secretaryPhone: "+91 98364 22251",
-    address: "Sriramnagar Residential Complex, VIP Road, Teghoria, Kolkata -52 (Opp. Haldirams)"
+    address: "Sriramnagar Residential Complex, VIP Road, Teghoria, Kolkata -52 (Opp. Haldirams)",
+    imagePath: "/images/durga-images/durga maa 2.jpg"
   },
   {
     id: 46,
@@ -1089,7 +1124,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 91372 25092",
     secretary: "Mr. Subhash Goswami (IPS) (Secretary)",
     secretaryPhone: "+91 88260 32255",
-    address: "Club Town Housing Complex, VIP Road, Tegharia, (Opposite - Haldiram), Kolkata - 700052"
+    address: "Club Town Housing Complex, VIP Road, Tegharia, (Opposite - Haldiram), Kolkata - 700052",
+    imagePath: "/images/durga-images/durga maa 3.jpg"
   },
   {
     id: 47,
@@ -1112,7 +1148,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 62921 96894",
     secretary: "Priyankar Roy Choudhury (Secretary)",
     secretaryPhone: "+91 98363 31464",
-    address: "Shyam Vihar Phase 2, REE-15, Raghunathpur, Kolkata-700059"
+    address: "Shyam Vihar Phase 2, REE-15, Raghunathpur, Kolkata-700059",
+    imagePath: "/images/durga-images/durga maa 4.jpg"
   },
   {
     id: 48,
@@ -1135,7 +1172,8 @@ export const pujoLocations = [
     contactPersonPhone: "+91 98310 78507",
     secretary: "Pravin Sharma (Secretary)",
     secretaryPhone: "+91 98303 08300",
-    address: "Poddar Vihar 137 VIP Road"
+    address: "Poddar Vihar 137 VIP Road",
+    imagePath: "/images/durga-images/durga maa 5.jpg"
   }
 ];
 

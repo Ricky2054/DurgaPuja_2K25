@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { pujoLocations } from '../data/pujoData';
 import InteractiveEffects from './InteractiveEffects';
 
@@ -503,10 +503,10 @@ const HomePage = () => {
         </div>
         
         <div className="view-all-container">
-          <button className="view-all-button" onClick={handleExploreMap}>
+          <Link to="/all-pandals" className="view-all-button">
             <span className="bengali-text">সব প্যান্ডেল দেখুন</span>
             <span className="english-text">View All 48 Pandals</span>
-          </button>
+          </Link>
         </div>
       </div>
 

@@ -646,10 +646,11 @@ body::after {
   filter: none !important;
   backdrop-filter: none !important;
   text-shadow: 
-    0 0 40px rgba(255, 215, 0, 1),
-    0 0 80px rgba(255, 69, 0, 0.8),
-    0 0 120px rgba(255, 215, 0, 0.6),
-    3px 3px 6px rgba(0, 0, 0, 0.9);
+    0 0 50px rgba(255, 215, 0, 1),
+    0 0 100px rgba(255, 69, 0, 0.9),
+    0 0 150px rgba(255, 215, 0, 0.7),
+    4px 4px 8px rgba(0, 0, 0, 1),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
@@ -662,10 +663,11 @@ body::after {
   margin-bottom: 0.5rem;
   animation: slideInLeft 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s both;
   text-shadow: 
-    0 0 30px rgba(255, 215, 0, 1),
-    0 0 60px rgba(255, 215, 0, 0.8),
-    0 0 90px rgba(255, 215, 0, 0.6),
-    3px 3px 6px rgba(0, 0, 0, 0.9);
+    0 0 40px rgba(255, 215, 0, 1),
+    0 0 80px rgba(255, 215, 0, 0.9),
+    0 0 120px rgba(255, 215, 0, 0.7),
+    4px 4px 8px rgba(0, 0, 0, 1),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
   letter-spacing: 0.05em;
   position: relative;
   z-index: 200;
@@ -731,10 +733,11 @@ body::after {
   display: block;
   animation: slideInLeft 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s both;
   text-shadow: 
-    0 0 25px rgba(255, 228, 181, 1),
-    0 0 50px rgba(255, 228, 181, 0.8),
-    0 0 75px rgba(255, 228, 181, 0.6),
-    3px 3px 6px rgba(0, 0, 0, 0.9);
+    0 0 35px rgba(255, 228, 181, 1),
+    0 0 70px rgba(255, 228, 181, 0.9),
+    0 0 105px rgba(255, 228, 181, 0.7),
+    4px 4px 8px rgba(0, 0, 0, 1),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
   letter-spacing: 0.02em;
   position: relative;
   z-index: 200;
@@ -827,7 +830,9 @@ body::after {
   backdrop-filter: none;
   color: #FFE4B5;
   text-shadow: 
-    0 0 15px rgba(255, 228, 181, 0.8),
+    0 0 25px rgba(255, 228, 181, 1),
+    0 0 50px rgba(255, 228, 181, 0.8),
+    4px 4px 8px rgba(0, 0, 0, 1),
     2px 2px 4px rgba(0, 0, 0, 0.8);
   position: relative;
   z-index: 200;
@@ -1823,6 +1828,7 @@ body::after {
 }
 
 .view-all-button {
+  display: inline-block;
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   color: white;
   border: none;
@@ -1832,6 +1838,8 @@ body::after {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+  text-decoration: none;
+  text-align: center;
 }
 
 .view-all-button:hover {
