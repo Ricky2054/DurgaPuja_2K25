@@ -818,7 +818,7 @@ const TrafficFlow = () => {
                          </p>
                        ) : location.tags.source === 'nominatim' ? (
                          <p style={{ color: '#2196F3', fontSize: '10px' }}>
-                           📍 OpenStreetMap: {location.tags.googleType}
+                           📍 {location.tags.googleType}
                          </p>
                        ) : location.tags.googleType && (
                          <p style={{ color: '#4CAF50', fontSize: '10px' }}>
