@@ -202,7 +202,7 @@ export const pujoLocations = [
     phone: "+91 84201 5726",
     contactPerson: "Subhas Basak (President)",
     contactPersonPhone: "+91 84201 5726",
-    secretary: "Nilendu Ch. Chaudhury (Secretary)",
+    secretary: "Niladri Chanda (Secretary)",
     secretaryPhone: "+91 98307 85400",
     address: "Prafulla Kanan Krishnapur, Kol- 101",
     imagePath: "/images/durga-images/durga maa 8.jpg"
