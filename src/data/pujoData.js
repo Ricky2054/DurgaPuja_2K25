@@ -199,7 +199,7 @@ export const pujoLocations = [
     motto: "Learning Through Celebration",
     theme: "Educational Excellence",
     established: "1980",
-    phone: "+91 84201 5726",
+    phone: "+91 98307 85400",
     contactPerson: "Subhas Basak (President)",
     contactPersonPhone: "+91 84201 5726",
     secretary: "Niladri Chanda (Secretary)",
