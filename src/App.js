@@ -6,6 +6,7 @@ import PandalPage from './components/PandalPage';
 import TrafficFlow from './components/TrafficFlow';
 import HomePage from './components/HomePage';
 import AllPandalsPage from './components/AllPandalsPage';
+import AboutUs from './components/AboutUs';
 import SoundEffects from './components/SoundEffects';
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/pandal-page/:id" element={<PandalPage />} />
                 <Route path="/traffic-flow/:id" element={<TrafficFlow />} />
                 <Route path="/all-pandals" element={<AllPandalsPage />} />
+                <Route path="/about-us" element={<AboutUs />} />
               </Routes>
       </div>
     </Router>

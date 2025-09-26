@@ -2958,3 +2958,95 @@ body::after {
     outline-offset: 2px;
   }
 }
+
+/* Footer Section Styles */
+.footer-section {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  border-top: 3px solid #FFD700;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-links {
+  margin-bottom: 1.5rem;
+}
+
+.footer-link {
+  display: inline-block;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #2c3e50;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+  margin: 0.5rem;
+}
+
+.footer-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.footer-link .bengali-text {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.footer-link .english-text {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.footer-credit {
+  color: #bdc3c7;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.footer-credit .bengali-text {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.footer-credit .english-text {
+  display: block;
+  font-weight: 400;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .footer-link {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .footer-link .bengali-text {
+    font-size: 0.9rem;
+  }
+  
+  .footer-link .english-text {
+    font-size: 0.8rem;
+  }
+  
+  .footer-credit {
+    font-size: 0.8rem;
+  }
+}

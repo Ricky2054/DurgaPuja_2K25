@@ -588,6 +588,22 @@ const HomePage = () => {
         </div>
         </div>
       </div>
+
+      {/* Footer Section */}
+      <div className="footer-section">
+        <div className="footer-content">
+          <div className="footer-links">
+            <Link to="/about-us" className="footer-link">
+              <span className="bengali-text">আমাদের সম্পর্কে</span>
+              <span className="english-text">About Us</span>
+            </Link>
+          </div>
+          <div className="footer-credit">
+            <p className="bengali-text">বাগুইআটি পুলিশ স্টেশন দ্বারা পরিচালিত</p>
+            <p className="english-text">Conducted by Baguiati Police Station</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
