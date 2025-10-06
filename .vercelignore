@@ -1,0 +1,34 @@
+# Dependencies
+node_modules
+
+# Development files
+src
+public
+*.md
+.gitignore
+package-lock.json
+
+# Build artifacts (will be created during build)
+build
+
+# Development and IDE files
+.vscode
+.idea
+*.log
+.env*
+
+# Images and assets not needed for build process
+Images
+cars
+*.aseprite
+thakur.png
+city_cars_2*.png
+roads2W.png
+*.ttf
+
+# Version control
+.git
+.github
+
+# Project directories not needed for deployment
+CP_V1.1.0_nyknck
